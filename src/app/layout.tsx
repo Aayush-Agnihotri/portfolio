@@ -3,7 +3,8 @@ import { Outfit } from 'next/font/google'
 import './globals.css'
 
 const outfit = Outfit({
-  subsets: ['latin']
+  subsets: ['latin'],
+  variable: '--font-outfit',
 })
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={`${outfit.variable} font-sans`}>
         {children}
         </body>
     </html>
