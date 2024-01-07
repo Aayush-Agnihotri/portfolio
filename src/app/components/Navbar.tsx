@@ -16,7 +16,7 @@ export default function Navbar() {
         </a>
       </div>
       <div className='grow'>
-        <div className='hidden sm:flex items-center justify-end gap-20'>
+        <div className='hidden sm:flex items-center justify-end gap-10'>
           <a className='hover:opacity-60 font-medium' href='#about'>About</a>
           <a className='hover:opacity-60 font-medium' href='#projects'>Projects</a>
           <a className='hover:opacity-60 font-medium' href='#experience'>Experience</a>

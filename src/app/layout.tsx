@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 import './globals.css'
+import { Providers } from './providers'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -19,8 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <body className={`${outfit.variable} font-sans`}>
-        {children}
+        <body className={`${outfit.variable} font-sans`}>
+          <Providers>
+          {children}
+          </Providers>
         </body>
     </html>
   )
