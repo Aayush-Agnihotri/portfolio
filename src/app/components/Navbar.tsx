@@ -60,11 +60,11 @@ export default function Navbar() {
               </div>
               <div className={'mt-6'}>
                 <nav className={'grid gap-y-8'}>
-                  <a className={'focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2'} href='#about'>About</a>
-                  <a className={'focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2'} href='#projects'>Projects</a>
-                  <a className={'focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2'} href='#experience'>Experience</a>
-                  <a className={'focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2'} href='#contact'>Contact</a>
-                  <Link className={'focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2'} href='/documents/Aayush Agnihotri Resume.pdf'>Resume</Link>
+                  <a className={'hover:opacity-60'} href='#about'><Popover.Button>About</Popover.Button></a>
+                  <a className={'hover:opacity-60'} href='#projects'><Popover.Button>Projects</Popover.Button></a>
+                  <a className={'hover:opacity-60'} href='#experience'><Popover.Button>Experience</Popover.Button></a>
+                  <a className={'hover:opacity-60'} href='#contact'><Popover.Button>Contact</Popover.Button></a>
+                  <Link className={'hover:opacity-60'} href='/documents/Aayush Agnihotri Resume.pdf'>Resume</Link>
                 </nav>
               </div>
             </div>
