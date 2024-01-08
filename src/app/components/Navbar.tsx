@@ -8,12 +8,12 @@ export default function Navbar() {
   return (
     <Popover className='container mx-auto flex items-center px-6 py-2 h-24'>
       <div>
-        <a href='#home'>
+        <Link href='/'>
           <div className='flex items-center gap-5'>
             {/* <img className='h-16 w-16' src='/images/headshot.jpeg' alt='Aayush Agnihotri' /> */}
             <h1 className='font-bold text-2xl text-blue-500'>Aayush Agnihotri</h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div className='grow'>
         <div className='hidden sm:flex items-center justify-end gap-10'>

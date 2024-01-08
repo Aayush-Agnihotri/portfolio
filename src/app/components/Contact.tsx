@@ -1,17 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Tooltip } from "@nextui-org/react";
-import { faEnvelope, faCalendarDays, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faCalendarDays, faArrowUpRightFromSquare, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 export default function Contact() {
   return (
-    <div id='contact' className='mx-auto flex flex-col bg-gray-50 py-5 gap-5'>
+    <div id='contact' className='flex flex-col bg-gray-50 py-5 gap-5'>
       <div className='flex flex-col items-center'>
         <h1 className='text-4xl font-bold'>Contact Me</h1>
         <p className='text-xl font-semibold text-gray-500'>Feel free to shoot me an email or schedule a coffee chat with the Calendly link below.</p>
       </div>
 
-      <div className='container mx-auto flex flex-row justify-center gap-20 flex-wrap'>
+      <div className='container mx-auto flex justify-center gap-20 flex-wrap'>
         <div className='flex flex-col gap-5 justify-center'>
           <Tooltip content='Email' showArrow={true} placement='left' closeDelay={0}>
             <a href='mailto:aa2328@cornell.edu' className='hover:opacity-60 flex items-center' rel="noopener noreferrer" target="_blank">
@@ -29,7 +29,8 @@ export default function Contact() {
             </a>
           </Tooltip>
         </div>
-        <div>
+
+        <div className='w-96'>
           <form className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white">
             <label className="text-gray-500 font-light mt-2">Full name<span className="text-red-500">*</span></label>
             <input type="text" name="name" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500" />
@@ -39,9 +40,9 @@ export default function Contact() {
 
             <label  className="text-gray-500 font-light mt-4">Message<span className="text-red-500">*</span></label>
             <textarea name="message" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500"></textarea>
-            <div className="flex flex-row items-center justify-start">
-              <button className="px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center">
-                Send
+            <div className="mx-auto flex flex-row items-center justify-start">
+              <button className="px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center hover:opacity-90">
+                Send &nbsp;<FontAwesomeIcon icon={faPaperPlane} size='1x' />
               </button>
             </div>
           </form>
