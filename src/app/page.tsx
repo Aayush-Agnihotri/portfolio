@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Technical from "./components/technical/Technical";
+import Work from "./components/work/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -13,6 +14,7 @@ export default function Page() {
       <Navbar />
       <Hero />
       <Technical />
+      <Work />
       <Contact />
       <Footer />
     </div>
