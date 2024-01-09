@@ -41,8 +41,8 @@ export default function Hero() {
           height={160}
         />
       </div>
-      <div className='flex flex-col items-center md:items-start'>
-        <h1 className='text-5xl font-bold'>Hey, I&apos;m Aayush.</h1>
+      <div className='flex flex-col items-center text-center md:items-start'>
+        <h1 className='text-4xl font-bold'>Hey, I&apos;m Aayush.</h1>
         <p className='text-xl mt-1 font-semibold text-blue-500'>
           <Typewriter options={{
             strings: ['Software Developer', 'Student', 'Open Source Contributor', 'Entrepreneur'],

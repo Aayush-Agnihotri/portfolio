@@ -27,7 +27,7 @@ export default function WorkAccordion() {
           classNames={{ subtitle: "text-blue-500" }}
           indicator={<FontAwesomeIcon icon={faChevronLeft} />}
         >
-          {data.date}
+          <p className='italic'>{data.date}</p>
           {data.details.map((detail, i) => (
             <li key={i}>{detail}</li>
           ))}

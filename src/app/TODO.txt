@@ -1,5 +1,4 @@
 Finish contact form logic
-Make logo (add to footer and navbar)
 Fix favicon
 Add transitions
 Optimize for SEO
