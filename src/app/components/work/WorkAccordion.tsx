@@ -6,7 +6,6 @@ import { WorkData } from "./WorkData";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-
 export interface WorkDataInterface {
   company: string;
   role: string;

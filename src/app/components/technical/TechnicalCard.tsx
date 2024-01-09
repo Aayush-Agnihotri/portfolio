@@ -22,7 +22,7 @@ export const TechnicalCard = ({ type, skills }: TechnicalDataInterface) => {
   return (
     <div
       // ref={cardRef}
-      className={`w-64`}
+      className={`w-4/5 md:w-64`}
       // ease-in transition-all ${
       //   cardVisible ? "translate-y-0" : "translate-y-32"
       // } ${cardVisible ? "opacity-100" : "opacity-0"} delay-${delay}`

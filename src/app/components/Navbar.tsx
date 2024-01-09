@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Navbar() {
   return (
-    <Popover className='container mx-auto flex items-center px-6 py-2 h-24'>
+    <Popover className='container mx-auto absolute left-0 right-0 flex items-center px-6 py-2 h-24'>
       <div>
         <Link href='/'>
           <div className='flex items-center gap-5'>

@@ -1,0 +1,5 @@
+Finish contact form logic
+Finish not found page
+Make logo (add to footer and navbar)
+Fix favicon
+Add transitions

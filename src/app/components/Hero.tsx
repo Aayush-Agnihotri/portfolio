@@ -1,13 +1,38 @@
+"use client"
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Tooltip } from "@nextui-org/react";
-import { faEnvelope, faFileLines } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faFileLines, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () =>
+       window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
+  const listenToScroll = () => {
+    let heightToHideFrom = 650;
+    const winScroll = document.body.scrollTop ||
+        document.documentElement.scrollTop;
+  
+    if (winScroll > heightToHideFrom) {
+       isVisible &&
+         setIsVisible(false);
+    } else if (winScroll < 50) {
+         setIsVisible(true);
+    }
+  };
+
   return (
-    <div className='container mx-auto flex flex-col items-center justify-center h-50 p-10 gap-5 md:gap-20 md:flex-row'>
+    <div className='container mx-auto flex flex-col items-center justify-center p-10 gap-5 h-screen md:gap-20 md:flex-row'>
       <div className='flex items-center'>
         <Image className='rounded-full'
           src="/images/headshot.jpeg"
@@ -16,9 +41,15 @@ export default function Hero() {
           height={160}
         />
       </div>
-      <div className='flex flex-col'>
+      <div className='flex flex-col items-center md:items-start'>
         <h1 className='text-5xl font-bold'>Hey, I&apos;m Aayush.</h1>
-        <p className='text-xl font-semibold text-gray-500'>Text</p>
+        <p className='text-xl mt-1 font-semibold text-blue-500'>
+          <Typewriter options={{
+            strings: ['Software Developer', 'Student', 'Open Source Contributor', 'Entrepreneur'],
+            autoStart: true,
+            loop: true,
+          }} />
+        </p>
         <br></br>
         <div className='flex gap-5 justify-center md:justify-start'>
           <Tooltip content='Resume' showArrow={true} placement='bottom' closeDelay={0}>
@@ -41,6 +72,12 @@ export default function Hero() {
           </Tooltip>
         </div>
       </div>
+      
+      {isVisible && <div id="arrow" className='absolute bottom-10'>
+        <a href='#about' className='hover:opacity-60'>
+          <FontAwesomeIcon icon={faChevronDown} size='2x' />
+        </a>
+      </div>}
     </div>
   )
 }
