@@ -16,7 +16,7 @@ export interface WorkDataInterface {
 
 export default function WorkAccordion() {
   return (
-    <Accordion selectionMode="multiple" variant="shadow">
+    <Accordion selectionMode="multiple" variant="shadow" defaultExpandedKeys={["0"]}>
       {WorkData.map((data, i) => (
         <AccordionItem
           key={i}
