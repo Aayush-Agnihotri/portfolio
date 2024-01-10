@@ -20,7 +20,10 @@ export const TechnicalCard = ({ type, skills }: TechnicalDataInterface) => {
   const cardIsVisible = useIsVisible(cardRef);
 
   return (
-    <div ref={cardRef} className={`w-4/5 md:w-64 ${cardIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
+    <div ref={cardRef} className={`w-4/5 md:w-64
+    ease-in transition-all duration-1000
+    ${cardIsVisible ? "translate-y-0" : "translate-y-20"}
+    ${cardIsVisible ? "opacity-100" : "opacity-0"}`}>
       <Card className="bg-gray-50">
         <CardHeader className="flex">
           <div className="pl-2 pt-2">

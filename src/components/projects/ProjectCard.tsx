@@ -29,7 +29,11 @@ export default function ProjectCard({ project }: { project: ProjectDataInterface
   const cardIsVisible = useIsVisible(cardRef);
 
   return (
-    <Card ref={cardRef} className={`${cardIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
+    <Card ref={cardRef} className={`
+    ease-in transition-all duration-1000
+    ${cardIsVisible ? "translate-y-0" : "translate-y-20"}
+    ${cardIsVisible ? "opacity-100" : "opacity-0"}
+    `}>
       <CardBody>
         <div className='flex flex-col gap-5 items-center lg:flex-row lg:items-start'>
           <div>
