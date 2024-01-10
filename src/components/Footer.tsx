@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Tooltip } from "@nextui-org/react";
@@ -9,14 +8,14 @@ export default function Footer() {
   return (
     <div className='mx-auto flex flex-col items-center justify-center p-10 gap-3 bg-blue-500'>
       <div>
-        <Link href='/'>
+        <a href='/'>
           <Image
             src="/images/logo-dark.png"
             alt="Aayush Agnihotri Logo"
             width={35}
             height={35}
           />
-        </Link>
+        </a>
       </div>
       <div>
         <h1 className='font-bold text-white'>Aayush Agnihotri &copy; 2024</h1>

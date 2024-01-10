@@ -2,14 +2,13 @@
 
 import { Popover, Transition } from "@headlessui/react"
 import { Fragment } from "react"
-import Link from "next/link"
 import Image from "next/image"
 
 export default function Navbar() {
   return (
     <Popover className='container mx-auto absolute left-0 right-0 flex items-center px-6 py-2 h-24 sm:text-center'>
       <div>
-        <Link href='/'>
+        <a href='/'>
           <div className='flex items-center gap-5'>
             <Image
               src="/images/logo-light.png"
@@ -19,7 +18,7 @@ export default function Navbar() {
             />
             <h1 className='font-bold text-2xl text-blue-500 text-center md:block sm:hidden'>Aayush Agnihotri</h1>
           </div>
-        </Link>
+        </a>
       </div>
       <div className='grow'>
         <div className='hidden sm:flex items-center justify-end gap-7'>
@@ -27,7 +26,7 @@ export default function Navbar() {
           <a className='hover:opacity-60 font-medium' href='#projects'>Projects</a>
           <a className='hover:opacity-60 font-medium' href='#experience'>Experience</a>
           <a className='hover:opacity-60 font-medium' href='#contact'>Contact</a>
-          <Link className='hover:opacity-60 font-medium' href='/documents/Aayush Agnihotri Resume.pdf'>Resume</Link>
+          <a className='hover:opacity-60 font-medium' href='/documents/Aayush Agnihotri Resume.pdf' rel="noopener noreferrer" target="_blank">Resume</a>
         </div>
       </div>
 
@@ -70,7 +69,7 @@ export default function Navbar() {
                   <a className={'hover:opacity-60'} href='#projects'><Popover.Button>Projects</Popover.Button></a>
                   <a className={'hover:opacity-60'} href='#experience'><Popover.Button>Experience</Popover.Button></a>
                   <a className={'hover:opacity-60'} href='#contact'><Popover.Button>Contact</Popover.Button></a>
-                  <Link className={'hover:opacity-60'} href='/documents/Aayush Agnihotri Resume.pdf'>Resume</Link>
+                  <a className={'hover:opacity-60'} href='/documents/Aayush Agnihotri Resume.pdf' rel="noopener noreferrer" target="_blank">Resume</a>
                 </nav>
               </div>
             </div>

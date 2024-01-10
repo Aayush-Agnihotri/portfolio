@@ -1,5 +1,4 @@
 import { ReactTerminal } from "react-terminal";
-import Link from "next/link";
 import { TechnicalData } from "./technical/TechnicalData";
 import { ProjectData } from "./projects/ProjectData";
 import { WorkData } from "./work/WorkData";
@@ -42,7 +41,7 @@ export default function Terminal() {
     </div>,
     resume: 
     <div className='xl:max-w-xl'>
-      <p>&gt; <Link className='hover:opacity-60' href='/documents/Aayush Agnihotri Resume.pdf' rel="noopener noreferrer" target="_blank">Resume</Link></p>
+      <p>&gt; <a className='hover:opacity-60' href='/documents/Aayush Agnihotri Resume.pdf' rel="noopener noreferrer" target="_blank">Resume</a></p>
     </div>,
     awards:
     <div className='xl:max-w-xl'>
