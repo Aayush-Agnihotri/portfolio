@@ -53,7 +53,7 @@ export default function Hero() {
         <br></br>
         <div className='flex gap-5 justify-center md:justify-start'>
           <Tooltip content='Resume' showArrow={true} placement='bottom' closeDelay={0}>
-            <Link className='hover:opacity-60' href='/documents/Aayush Agnihotri Resume.pdf'><FontAwesomeIcon icon={faFileLines} size='2x' /></Link>
+            <a href='/documents/Aayush Agnihotri Resume.pdf' className='hover:opacity-60' rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faFileLines} size='2x' /></a>
           </Tooltip>
           <Tooltip content='GitHub' showArrow={true} placement='bottom' closeDelay={0}>
             <a href='https://github.com/Aayush-Agnihotri' className='hover:opacity-60' rel="noopener noreferrer" target="_blank">
