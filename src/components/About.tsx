@@ -27,7 +27,7 @@ export default function About() {
             </div>
 
             <RevealWrapper origin="bottom" delay={0}>
-              <div className={`min-h-unit-7xl max-h-unit-7xl overflow-x-hidden overflow-y-hidden hover:cursor-text bg-[#272B36] rounded-lg`}>
+              <div className={`hidden xl:block min-h-unit-7xl max-h-unit-7xl overflow-x-hidden overflow-y-hidden hover:cursor-text bg-[#272B36] rounded-lg`}>
                 <Terminal />
               </div>
             </RevealWrapper>
