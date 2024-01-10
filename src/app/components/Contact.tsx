@@ -37,7 +37,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className='w-96'>
+          <div className='w-4/5 md:w-96'>
             <form className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white">
               <label className="text-gray-500 font-light mt-2">Full name<span className="text-red-500">*</span></label>
               <input type="text" name="name" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-500" />

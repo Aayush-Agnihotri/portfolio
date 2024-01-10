@@ -17,7 +17,7 @@ export default function Navbar() {
               width={35}
               height={35}
             />
-            <h1 className='font-bold text-2xl text-blue-500'>Aayush Agnihotri</h1>
+            <h1 className='font-bold text-2xl text-blue-500 text-center md:block sm:hidden'>Aayush Agnihotri</h1>
           </div>
         </Link>
       </div>

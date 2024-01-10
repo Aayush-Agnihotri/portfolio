@@ -27,7 +27,7 @@ export const TechnicalCard = ({ type, skills }: TechnicalDataInterface) => {
       //   cardVisible ? "translate-y-0" : "translate-y-32"
       // } ${cardVisible ? "opacity-100" : "opacity-0"} delay-${delay}`
     >
-      <Card className="bg-gray-50 -my-5">
+      <Card className="bg-gray-50">
         <CardHeader className="flex">
           <div className="pl-2 pt-2">
             <p className="text-xl font-semibold">{type}</p>

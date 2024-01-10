@@ -5,7 +5,7 @@ export const WorkData: WorkDataInterface[] = [
   {
     company: "Johnson & Johnson",
     role: "Software Engineer Intern",
-    date: "2019 - Present",
+    date: "May 2023 - August 2023",
     details: [
       "Developed ChatGPT-like AI chatbot using React and Django with 10k+ users, achieving annual savings of $20k+ through process automation",
       "Applied NLP algorithms to create text-based vector embeddings, optimizing document similarity search by 70%",

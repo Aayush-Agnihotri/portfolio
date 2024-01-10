@@ -1,4 +1,4 @@
-Finish contact form logic
-Fix favicon
 Add transitions
 Optimize for SEO
+
+Fix favicon
