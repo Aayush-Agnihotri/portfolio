@@ -42,6 +42,7 @@ export default function Hero() {
       </div>
       <div className='flex flex-col items-center text-center md:items-start animate-in slide-in-from-right duration-500'>
         <h1 className='text-4xl font-bold'>Hey, I&apos;m Aayush.</h1>
+        <div className='h-5'>
         <span className='text-xl mt-1 font-semibold text-blue-500'>
           <Typewriter options={{
             strings: ['Software Developer', 'Student', 'Open Source Contributor', 'Entrepreneur'],
@@ -49,6 +50,7 @@ export default function Hero() {
             loop: true,
           }} />
         </span>
+        </div>
         <br></br>
         <div className='flex gap-5 justify-center md:justify-start'>
           <Tooltip content='Resume' showArrow={true} placement='bottom' closeDelay={0}>
