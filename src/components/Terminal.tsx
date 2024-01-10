@@ -1,9 +1,18 @@
+"use client"
+
 import { ReactTerminal } from "react-terminal";
 import { TechnicalData } from "./technical/TechnicalData";
 import { ProjectData } from "./projects/ProjectData";
 import { WorkData } from "./work/WorkData";
+import { useEffect, useState } from "react";
 
 export default function Terminal() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true)
+  },[])
+
   const welcomeMessage =
     <div>
       Welcome to <span className='text-orange-400'>Aayush&apos;s</span> terminal emulator!
@@ -88,16 +97,18 @@ export default function Terminal() {
   }
 
   return (
-    <ReactTerminal
-      commands={commands}
-      prompt={"me@terminal:~$ "}
-      welcomeMessage={welcomeMessage}
-      enableInput={true}
-      showControlBar={false}
-      showControlButtons={false}
-      errorMessage={errorMessage}
-      theme={"custom-theme"}
-      themes={themes}
-    />
+    <>{isClient ? 
+      <ReactTerminal
+        commands={commands}
+        prompt={"me@terminal:~$ "} 
+        welcomeMessage={welcomeMessage}
+        enableInput={true}
+        showControlBar={false}
+        showControlButtons={false}
+        errorMessage={errorMessage}
+        theme={"custom-theme"}
+        themes={themes}
+      />
+    : <></>}</>
   );
 }
