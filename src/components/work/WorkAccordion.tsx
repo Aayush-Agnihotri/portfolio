@@ -32,6 +32,7 @@ export default function WorkAccordion() {
           {data.details.map((detail, i) => (
             <li key={i}>{detail}</li>
           ))}
+          <p className='pb-3'></p>
         </AccordionItem>
       ))}
     </Accordion>

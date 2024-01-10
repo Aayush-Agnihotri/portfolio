@@ -22,9 +22,9 @@ export default function About() {
           
           <div className='mt-5 flex flex-col gap-10 justify-center xl:flex-row xl:gap-20'>
             <div ref={contentRef} className={`w-4/5 mx-auto text-center xl:w-1/3 ${contentIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
-              <p className='text-xl text-gray-500'>I am currently a student at <span className='font-bold'>Cornell University</span>, majoring in <span className='font-bold'>Computer Science</span> with a minor in <span className='font-bold'>Business</span>. I have experience in <span className='font-bold'>software engineering</span>, primarily in <span className='font-bold'>web and full stack development.</span></p>
+              <p className='text-xl text-gray-500'>I am currently a student at <span className='text-red-500'>Cornell University</span>, majoring in <span className='text-blue-500'>Computer Science</span> with a minor in <span className='text-blue-500'>Business</span>. I have experience in <span className='text-blue-500'>software engineering</span>, primarily in <span className='text-blue-500'>web and full stack development.</span></p>
               <br></br>
-              <p className='text-xl text-gray-500'>I aim to leverage technology and data to build useful and innovative products.</p>
+              <p className='text-xl text-gray-500'>I aim to leverage <span className='text-blue-500'>technology and data</span> to build <span className='text-blue-500'>useful and innovative</span> products.</p>
               <br></br>
               <p className='text-xl text-gray-500'>Aside from school and programming, I enjoy working out at the gym 🏋️, listening to music 🎵, or playing soccer ⚽.</p>
             </div>
