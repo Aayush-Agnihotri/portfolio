@@ -69,7 +69,7 @@ export default function Navbar() {
                   <a className={'hover:opacity-60'} href='#projects'><Popover.Button>Projects</Popover.Button></a>
                   <a className={'hover:opacity-60'} href='#experience'><Popover.Button>Experience</Popover.Button></a>
                   <a className={'hover:opacity-60'} href='#contact'><Popover.Button>Contact</Popover.Button></a>
-                  <a className={'hover:opacity-60'} href='/documents/Aayush Agnihotri Resume.pdf' rel="noopener noreferrer" target="_blank">Resume</a>
+                  <a className={'hover:opacity-60'} href='/documents/Aayush Agnihotri Resume.pdf' rel="noopener noreferrer" target="_blank"><Popover.Button>Resume</Popover.Button></a>
                 </nav>
               </div>
             </div>
