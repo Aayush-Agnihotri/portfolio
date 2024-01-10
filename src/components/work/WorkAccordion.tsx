@@ -15,10 +15,11 @@ export interface WorkDataInterface {
 }
 
 export default function WorkAccordion() {
+
   return (
-    <Accordion selectionMode="multiple" variant="shadow" defaultExpandedKeys={["0"]}>
+    <Accordion selectionMode="multiple" variant="splitted" defaultExpandedKeys={["0"]}>
       {WorkData.map((data, i) => (
-        <AccordionItem
+        <AccordionItem  
           key={i}
           aria-label={`${data.company}`}
           subtitle={`${data.role}`}

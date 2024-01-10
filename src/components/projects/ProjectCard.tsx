@@ -1,8 +1,12 @@
+"use client"
+
 import Image from 'next/image'
 import { Card, CardBody, Chip } from "@nextui-org/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptop, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faAppStoreIos } from '@fortawesome/free-brands-svg-icons'
+import { useRef } from "react"
+import { useIsVisible } from "@/hooks/useIsVisible"
 
 export interface ProjectDataInterface {
   name: string
@@ -21,8 +25,11 @@ export interface ProjectDataInterface {
 }
 
 export default function ProjectCard({ project }: { project: ProjectDataInterface}) {
+  const cardRef = useRef(null);
+  const cardIsVisible = useIsVisible(cardRef);
+
   return (
-    <Card>
+    <Card ref={cardRef} className={`${cardIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
       <CardBody>
         <div className='flex flex-col gap-5 items-center lg:flex-row lg:items-start'>
           <div>

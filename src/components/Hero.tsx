@@ -33,7 +33,7 @@ export default function Hero() {
 
   return (
     <div className='container mx-auto flex flex-col items-center justify-center p-10 gap-5 h-screen md:gap-20 md:flex-row'>
-      <div className='flex items-center'>
+      <div className='flex items-center animate-in slide-in-from-left duration-500'>
         <Image className='rounded-full'
           src="/images/headshot.jpeg"
           alt="Picture of Aayush Agnihotri"
@@ -41,7 +41,7 @@ export default function Hero() {
           height={160}
         />
       </div>
-      <div className='flex flex-col items-center text-center md:items-start'>
+      <div className='flex flex-col items-center text-center md:items-start animate-in slide-in-from-right duration-500'>
         <h1 className='text-4xl font-bold'>Hey, I&apos;m Aayush.</h1>
         <p className='text-xl mt-1 font-semibold text-blue-500'>
           <Typewriter options={{
@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
       </div>
       
-      {isVisible && <div id="arrow" className='absolute bottom-10'>
+      {isVisible && <div id="arrow" className='absolute bottom-10 animate-in slide-in-from-top duration-500'>
         <a href='#about' className='hover:opacity-60'>
           <FontAwesomeIcon icon={faChevronDown} size='2x' />
         </a>

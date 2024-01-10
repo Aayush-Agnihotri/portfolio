@@ -5,19 +5,28 @@ import { Tooltip } from "@nextui-org/react";
 import { faEnvelope, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { InlineWidget } from "react-calendly";
+import { useRef } from "react"
+import { useIsVisible } from "@/hooks/useIsVisible"
 
 export default function Contact() {
+  const headerRef = useRef(null);
+  const headerIsVisible = useIsVisible(headerRef);
+  const contentRef = useRef(null);
+  const contentIsVisible = useIsVisible(contentRef);
+  const calendlyRef = useRef(null);
+  const calendlyIsVisible = useIsVisible(calendlyRef);
+
   return (
     <div id='contact' className='bg-gray-50 py-5'>
       <div className='mx-auto flex flex-col gap-5 items-center'>
-        <div className='flex flex-col items-center text-center w-4/5'>
+        <div ref={headerRef} className={`flex flex-col items-center text-center w-4/5 ${headerIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
           <h1 className='text-4xl font-bold'>Contact Me</h1>
           <p className='text-xl font-semibold text-gray-500'>Feel free to shoot me an email or schedule a coffee chat through Calendly below.</p>
         </div>
 
         <div className='container mx-auto flex justify-center gap-5 flex-wrap lg:gap-20'>
           <div className='flex flex-col gap-5 justify-center text-center'>
-            <div className='flex justify-evenly md:justify-start'>
+            <div ref={contentRef} className={`flex justify-evenly md:justify-start ${contentIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
               <Tooltip content='Email' showArrow={true} placement='left' closeDelay={0}>
                 <a href='mailto:aa2328@cornell.edu' className='hover:opacity-60 flex items-center' rel="noopener noreferrer" target="_blank">
                   <FontAwesomeIcon icon={faEnvelope} size='2x' />&nbsp; aa2328@cornell.edu &nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare} size='2xs' />
@@ -40,7 +49,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className='w-4/5 md:w-96'>
+          <div ref={calendlyRef} className={`w-4/5 md:w-96 ${calendlyIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
             <InlineWidget
               url={"https://calendly.com/aayush-agnihotri"}
               styles={{

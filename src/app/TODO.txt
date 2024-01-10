@@ -1,4 +1,1 @@
-Add transitions
 Optimize for SEO
-
-Fix favicon

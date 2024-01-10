@@ -90,6 +90,7 @@ export default function Terminal() {
 
   return (
     <ReactTerminal
+      className='overflow-y-hidden'
       commands={commands}
       prompt={"me@terminal:~$ "}
       welcomeMessage={welcomeMessage}

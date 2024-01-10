@@ -1,8 +1,8 @@
 "use client"
 
-// import { useIsVisibleOnce } from "@/hooks/useIsVisibleOnce";
 import { Card, CardBody, CardHeader, Divider, Image } from "@nextui-org/react";
-// import { useRef } from "react";
+import { useRef } from "react";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 export interface TechnicalSkillInterface {
   name: string;
@@ -16,17 +16,11 @@ export interface TechnicalDataInterface {
 }
 
 export const TechnicalCard = ({ type, skills }: TechnicalDataInterface) => {
-  // const cardRef = useRef(null);
-  // const cardVisible = useIsVisibleOnce(cardRef);
+  const cardRef = useRef(null);
+  const cardIsVisible = useIsVisible(cardRef);
 
   return (
-    <div
-      // ref={cardRef}
-      className={`w-4/5 md:w-64`}
-      // ease-in transition-all ${
-      //   cardVisible ? "translate-y-0" : "translate-y-32"
-      // } ${cardVisible ? "opacity-100" : "opacity-0"} delay-${delay}`
-    >
+    <div ref={cardRef} className={`w-4/5 md:w-64 ${cardIsVisible ? "animate-in slide-in-from-bottom duration-500" : ""}`}>
       <Card className="bg-gray-50">
         <CardHeader className="flex">
           <div className="pl-2 pt-2">
