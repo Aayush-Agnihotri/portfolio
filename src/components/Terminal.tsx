@@ -98,17 +98,20 @@ export default function Terminal() {
 
   return (
     <>{isClient ? 
-      <ReactTerminal
-        commands={commands}
-        prompt={"me@terminal:~$ "} 
-        welcomeMessage={welcomeMessage}
-        enableInput={true}
-        showControlBar={false}
-        showControlButtons={false}
-        errorMessage={errorMessage}
-        theme={"custom-theme"}
-        themes={themes}
-      />
+      <div>
+        <ReactTerminal
+          className='hover:cursor-text min-h-unit-7xl max-h-unit-7xl overflow-x-hidden'
+          commands={commands}
+          prompt={"me@terminal:~$ "} 
+          welcomeMessage={welcomeMessage}
+          enableInput={true}
+          showControlBar={false}
+          showControlButtons={false}
+          errorMessage={errorMessage}
+          theme={"custom-theme"}
+          themes={themes}
+        />
+      </div>
     : <></>}</>
   );
 }

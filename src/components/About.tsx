@@ -4,7 +4,6 @@ import Terminal from "./Terminal"
 import { RevealWrapper } from "next-reveal"
 
 export default function About() {
-
   return (
     <div id='about' className='bg-gray-50 py-10 text-center'>
       <div className='w-4/5 mx-auto flex flex-col gap-5 items-center'>
@@ -27,7 +26,7 @@ export default function About() {
             </div>
 
             <RevealWrapper origin="bottom" delay={0}>
-              <div className={`hidden xl:block min-h-unit-7xl max-h-unit-7xl overflow-x-hidden overflow-y-hidden hover:cursor-text bg-[#272B36] rounded-lg`}>
+              <div id={"scroll"} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
                 <Terminal />
               </div>
             </RevealWrapper>
