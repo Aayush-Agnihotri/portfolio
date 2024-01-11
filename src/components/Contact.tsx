@@ -49,7 +49,7 @@ export default function Contact() {
             <div className='flex justify-evenly md:justify-start'>
               <Tooltip content='GitHub' showArrow={true} placement='left' closeDelay={0}>
                 <a href='https://github.com/Aayush-Agnihotri' className='hover:opacity-60 flex items-center' rel="noopener noreferrer" target="_blank">
-                  <FontAwesomeIcon icon={faGithub} size='2x' />&nbsp; github.com/Aayush-Agnihotri &nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare} size='2xs' />
+                  <FontAwesomeIcon icon={faGithub} size='2x' />&nbsp; github.com/aayush-agnihotri &nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare} size='2xs' />
                 </a>
               </Tooltip>
             </div>
