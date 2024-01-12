@@ -9,13 +9,13 @@ export default function About() {
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     // e.preventDefault();
-    console.log("clicked");
+    // console.log("clicked");
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'center'});
   };
 
   const handleInputFocus = (e: React.FocusEvent<HTMLDivElement, Element>) => {
     e.preventDefault();
-    console.log("focused");
+    // console.log("focused");
   };
 
   return (

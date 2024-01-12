@@ -100,7 +100,7 @@ export default function Terminal() {
     <>{isClient ? 
       <div>
         <ReactTerminal
-          className='hover:cursor-text min-h-unit-7xl max-h-unit-7xl overflow-x-hidden'
+          className='hover:cursor-text min-h-unit-7xl max-h-unit-7xl overflow-x-hidden fixed'
           commands={commands}
           prompt={"me@terminal:~$ "} 
           welcomeMessage={welcomeMessage}
