@@ -8,8 +8,14 @@ export default function About() {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
+    // e.preventDefault();
+    console.log("clicked");
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'center'});
+  };
+
+  const handleInputFocus = (e: React.FocusEvent<HTMLDivElement, Element>) => {
+    e.preventDefault();
+    console.log("focused");
   };
 
   return (
@@ -34,7 +40,7 @@ export default function About() {
             </div>
 
             <RevealWrapper origin="bottom" delay={0}>
-              <div ref={ref} onClick={(e) => handleClick(e)} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
+              <div ref={ref} onClick={(e) => handleClick(e)} onFocus={(e) => handleInputFocus(e)} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
                 <Terminal />
               </div>
             </RevealWrapper>
