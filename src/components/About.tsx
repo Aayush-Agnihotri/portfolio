@@ -6,7 +6,9 @@ import { useRef } from "react"
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
-  const handleClick = () => {
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'center'});
   };
 
@@ -32,7 +34,7 @@ export default function About() {
             </div>
 
             <RevealWrapper origin="bottom" delay={0}>
-              <div ref={ref} onClick={handleClick} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
+              <div ref={ref} onClick={(e) => handleClick(e)} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
                 <Terminal />
               </div>
             </RevealWrapper>
