@@ -7,7 +7,7 @@ import { useRef } from "react"
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const handleClick = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
+    ref.current?.scrollIntoView({behavior: 'smooth', block: 'center'});
   };
 
   return (
@@ -32,7 +32,7 @@ export default function About() {
             </div>
 
             <RevealWrapper origin="bottom" delay={0}>
-              <div ref={ref} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
+              <div ref={ref} onClick={handleClick} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
                 <Terminal />
               </div>
             </RevealWrapper>
