@@ -2,8 +2,14 @@
 
 import Terminal from "./Terminal"
 import { RevealWrapper } from "next-reveal"
+import { useRef } from "react"
 
 export default function About() {
+  const ref = useRef<HTMLDivElement>(null);
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
+
   return (
     <div id='about' className='bg-gray-50 py-10 text-center'>
       <div className='w-4/5 mx-auto flex flex-col gap-5 items-center'>
@@ -26,7 +32,7 @@ export default function About() {
             </div>
 
             <RevealWrapper origin="bottom" delay={0}>
-              <div id={"scroll"} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
+              <div ref={ref} className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}> 
                 <Terminal />
               </div>
             </RevealWrapper>
