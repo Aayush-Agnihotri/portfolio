@@ -4,14 +4,6 @@
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/secret",
-        destination: "/secret.html",
-      },
-    ];
-  },
   /**
    * Enable static exports for the App Router.
    *
