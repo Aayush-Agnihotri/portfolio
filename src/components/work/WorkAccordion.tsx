@@ -24,7 +24,7 @@ export default function WorkAccordion() {
     <div ref={accordionRef} className={`ease-in transition-all duration-1000
         ${accordionIsVisible ? "translate-y-0" : "translate-y-20"}
         ${accordionIsVisible ? "opacity-100" : "opacity-0"}`}>
-      <Accordion selectionMode="multiple" variant="splitted" defaultExpandedKeys={["0", "1", "2", "3"]}>
+      <Accordion selectionMode="multiple" variant="splitted" defaultExpandedKeys={["0", "1", "2", "3", "4"]}>
         {WorkData.map((data, i) => (
             <AccordionItem  
               key={i}

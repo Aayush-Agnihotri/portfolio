@@ -1,28 +1,40 @@
 import { WorkDataInterface } from "./WorkAccordion";
-import { faUserDoctor, faMobileScreenButton, faRobot, faComputer } from "@fortawesome/free-solid-svg-icons";
+import { faClapperboard, faUserDoctor, faMobileScreenButton, faRobot, faComputer } from "@fortawesome/free-solid-svg-icons";
 
 export const WorkData: WorkDataInterface[] = [
+  {
+    company: "Cornell AppDev",
+    role: "Backend Lead & Course Instructor",
+    date: "September 2023 - Present",
+    details: [
+      "Lead all backend development for a team of 50+ students building apps with 12,000+ active users",
+      "Collaborate with iOS, Android, Design, and Marketing teams in Agile development to create and maintain apps",
+      "CS 1998 Course Instructor, teaching client-server architecture, database design, and DevOps to 100+ students",
+      "Previous Role: Backend Developer"
+    ],
+    icon: faMobileScreenButton
+  },
+  {
+    company: "Paramount",
+    role: "Software Engineer Intern",
+    date: "June 2024 - August 2024",
+    details: [
+      "Implemented a CNN in Python with TensorFlow to classify ephemeral text within media with 94% accuracy",
+      "Utilized Spark and Jupyter Notebooks to analyze data and train machine learning models, reducing noise by 80%",
+      "Deployed model with AWS Lambda and Jenkins to the AIML pipeline, processing 9,000+ hours of content yearly"
+    ],
+    icon: faClapperboard
+  },
   {
     company: "Johnson & Johnson",
     role: "Software Engineer Intern",
     date: "May 2023 - August 2023",
     details: [
-      "Developed ChatGPT-like AI chatbot using React and Django with 10k+ users, achieving annual savings of $20k+ through process automation",
+      "Developed a ChatGPT-like AI chatbot using React, LangChain, and Django with 10,000+ users, achieving annual savings of $20,000+ through process automation",
       "Applied NLP algorithms to create text-based vector embeddings, optimizing document similarity search by 70%",
-      "Integrated vector databases to store documents alongside single sign-on and SQL databases through Microsoft Azure"
+      "Integrated Milvus vector database to store/retrieve embeddings alongside single sign-on through Microsoft Azure"
     ],
     icon: faUserDoctor
-  },
-  {
-    company: "Cornell AppDev",
-    role: "Backend Developer",
-    date: "September 2023 - Present",
-    details: [
-      "Developing new features and backend architecture for various mobile apps with 11k+ daily users using TypeScript, Python, and GraphQL",
-      "Collaborating with iOS, Android, Design, and Marketing teams in agile development to create and maintain apps",
-      "CS 1998 (Backend Development) TA, teaching server architecture, database design, deployment, and authentication"
-    ],
-    icon: faMobileScreenButton
   },
   {
     company: "Cornell Nexus",
@@ -34,15 +46,5 @@ export const WorkData: WorkDataInterface[] = [
       "Simulated traversal algorithms and finite-state machine paths to optimize robot navigation strategies"
     ],
     icon: faRobot
-  },
-  {
-    company: "Aziton",
-    role: "Full Stack Software Engineer",
-    date: "June 2019 - May 2023",
-    details: [
-      "Designed, developed, and deployed web applications addressing community needs, achieving 1.2+ million page views and generating $1,000+ in profits",
-      "Integrated search engine optimization techniques, resulting in a 400% increase in organic website traffic"
-    ],
-    icon: faComputer
   }
 ];

@@ -5,11 +5,6 @@ export const TechnicalData: TechnicalDataInterface[] = [
     type: "Languages",
     skills: [
       {
-        name: "Java",
-        text: "Programming Language",
-        imageUrl: "/icons/java.svg",
-      },
-      {
         name: "Python",
         text: "Programming Language",
         imageUrl: "/icons/python.svg",
@@ -20,7 +15,12 @@ export const TechnicalData: TechnicalDataInterface[] = [
         imageUrl: "/icons/js.svg",
       },
       {
-        name: "C++",
+        name: "Java",
+        text: "Programming Language",
+        imageUrl: "/icons/java.svg",
+      },
+      {
+        name: "C & C++",
         text: "Programming Language",
         imageUrl: "/icons/cpp.svg",
       }
@@ -40,14 +40,14 @@ export const TechnicalData: TechnicalDataInterface[] = [
         imageUrl: "/icons/node.svg",
       },
       {
-        name: "Flask",
-        text: "Backend Framework",
-        imageUrl: "/icons/flask.svg",
-      },
-      {
         name: "Django",
         text: "Backend Framework",
         imageUrl: "/icons/django.svg",
+      },
+      {
+        name: "Spring Boot",
+        text: "Backend Framework",
+        imageUrl: "/icons/spring.svg",
       }
     ]
   },
@@ -85,9 +85,9 @@ export const TechnicalData: TechnicalDataInterface[] = [
         imageUrl: "/icons/docker.svg",
       },
       {
-        name: "Kubernetes",
-        text: "Container Orchestration",
-        imageUrl: "/icons/kubernetes.svg",
+        name: "Jenkins",
+        text: "CI/CD Platform",
+        imageUrl: "/icons/jenkins.svg",
       },
       {
         name: "AWS, Azure, GCP",

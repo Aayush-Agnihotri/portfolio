@@ -14,7 +14,7 @@ export default function Work() {
         <h1 ref={headerRef} className={`text-4xl font-bold
         ease-in transition-all duration-1000
         ${headerIsVisible ? "translate-y-0" : "translate-y-20"}
-        ${headerIsVisible ? "opacity-100" : "opacity-0"}`}>Work Experience</h1>
+        ${headerIsVisible ? "opacity-100" : "opacity-0"}`}>Work & Leadership Experience</h1>
       </div>
 
       <div className='container w-4/5 mx-auto'>
