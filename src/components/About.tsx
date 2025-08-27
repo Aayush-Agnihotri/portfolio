@@ -31,7 +31,7 @@ export default function About() {
           <div className='mt-5 flex flex-col gap-10 justify-center items-center xl:items-start xl:flex-row xl:gap-20'>
             <div className={`w-4/5 mx-auto text-center xl:w-1/3`}>
               <RevealWrapper origin="bottom" delay={0}>
-              <p className='text-xl text-gray-500'>I am currently a student at <span className='text-red-500'>Cornell University</span>, majoring in <span className='text-blue-500'>Computer Science</span> with a minor in <span className='text-blue-500'>Business</span>. I have experience in <span className='text-green-500'>software engineering</span>, primarily in <span className='text-green-500'>full stack development and machine learning.</span></p>
+              <p className='text-xl text-gray-500'>I am currently a student at <span className='text-red-500'>Cornell University</span>, pursuing a <span className='text-blue-500'>Master of Engineering</span> degree in <span className='text-blue-500'>Computer Science</span>. I have experience in <span className='text-green-500'>software engineering</span>, primarily in <span className='text-green-500'>full stack development and machine learning.</span></p>
               <br></br>
               <p className='text-xl text-gray-500'>I aim to leverage <span className='text-orange-500'>technology and data</span> to build <span className='text-orange-500'>innovative</span> products that help people.</p>
               <br></br>

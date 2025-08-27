@@ -1,10 +1,11 @@
 "use client"
 
 import React from "react";
+import Image from 'next/image';
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { WorkData } from "./WorkData";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconDefinition, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 import { useIsVisible } from "@/hooks/useIsVisible";
 
@@ -13,7 +14,7 @@ export interface WorkDataInterface {
   role: string;
   date: string;
   details: string[];
-  icon: IconDefinition;
+  image: string;
 }
 
 export default function WorkAccordion() {
@@ -31,7 +32,7 @@ export default function WorkAccordion() {
               aria-label={`${data.company}`}
               subtitle={`${data.role}`}
               title={`${data.company}`}
-              startContent={<FontAwesomeIcon icon={data.icon} />}
+              startContent={<Image className='rounded-lg' src={data.image} alt={`${data.company} Image`} width={50} height={50} />}
               classNames={{ subtitle: "text-blue-500" }}
               indicator={<FontAwesomeIcon icon={faChevronLeft} />}
             >

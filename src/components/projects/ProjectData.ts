@@ -2,6 +2,19 @@ import { ProjectDataInterface } from "./ProjectCard";
 
 export const ProjectData : ProjectDataInterface[] = [
   {
+    name: "AI Dev",
+    stack: ["TypeScript", "React", "Next.js", "MongoDB", "Firebase", "Docker", "GCP"],
+    description: "An internal AI tool and platform enabling AI features and interactions with a finetuned organizational model coupled with RAG.",
+    imageUrl: "/images/aidev.png",
+    links: {
+      github: "https://github.com/cuappdev/ai-dev",
+      other: {
+        name: "Website",
+        url: "https://ai.cornellappdev.com"
+      }
+    }
+  },
+  {
     name: "Eatery",
     stack: ["Python", "Django", "PostgreSQL", "AWS", "Docker"],
     description: "Eatery is a Cornell Dining app with 40,000+ downloads, allowing 10,000+ students and facility to track menu items and schedules for dining halls and resturants.",

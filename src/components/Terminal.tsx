@@ -39,10 +39,9 @@ export default function Terminal() {
     whoami: 
     <div className='xl:max-w-xl'>
       <p>&gt; Aayush Agnihotri</p>
-      <p>&gt; Cornell University Undergrad</p>
-      <p>&gt; B.A. in Computer Science</p>
-      <p>&gt; Minor in Business</p>
-      <p>&gt; Background in web and full stack development</p>
+      <p>&gt; Cornell University</p>
+      <p>&gt; MEng in Computer Science</p>
+      <p>&gt; Background in full stack development and machine learning</p>
     </div>,
     website: 
     <div className='xl:max-w-xl'>

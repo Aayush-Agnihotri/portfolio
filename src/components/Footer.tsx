@@ -18,7 +18,7 @@ export default function Footer() {
         </a>
       </div>
       <div>
-        <h1 className='font-bold text-white'>Aayush Agnihotri &copy; 2024</h1>
+        <h1 className='font-bold text-white'>Aayush Agnihotri &copy; 2025</h1>
       </div>
       <div className='flex justify-center gap-5'>
         <Tooltip content='Resume' showArrow={true} placement='bottom' closeDelay={0}>
