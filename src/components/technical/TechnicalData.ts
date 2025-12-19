@@ -23,8 +23,8 @@ export const TechnicalData: TechnicalDataInterface[] = [
         name: "C & C++",
         text: "Programming Language",
         imageUrl: "/icons/cpp.svg",
-      }
-    ]
+      },
+    ],
   },
   {
     type: "Frameworks",
@@ -48,8 +48,8 @@ export const TechnicalData: TechnicalDataInterface[] = [
         name: "Spring Boot",
         text: "Backend Framework",
         imageUrl: "/icons/spring.svg",
-      }
-    ]
+      },
+    ],
   },
   {
     type: "Databases",
@@ -73,8 +73,8 @@ export const TechnicalData: TechnicalDataInterface[] = [
         name: "MySQL",
         text: "Relational Database",
         imageUrl: "/icons/mysql.svg",
-      }
-    ]
+      },
+    ],
   },
   {
     type: "DevOps",
@@ -98,8 +98,8 @@ export const TechnicalData: TechnicalDataInterface[] = [
         name: "Git",
         text: "Version Control",
         imageUrl: "/icons/git.svg",
-      }
-    ]
+      },
+    ],
   },
   {
     type: "Machine Learning",
@@ -123,7 +123,7 @@ export const TechnicalData: TechnicalDataInterface[] = [
         name: "NumPy",
         text: "ML Toolkit",
         imageUrl: "/icons/np.svg",
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
