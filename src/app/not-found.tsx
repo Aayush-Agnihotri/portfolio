@@ -1,6 +1,7 @@
 "use client";
 
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -10,11 +11,11 @@ export default function NotFound() {
         <p className="text-gray-500">
           The page you are looking for does not exist.
         </p>
-        <a className="mx-auto lg:mx-0 hover:opacity-60" href="/">
+        <Link className="mx-auto lg:mx-0 hover:opacity-60" href="/">
           <button className="px-10 mt-8 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold hover:opacity-90">
             Go Home
           </button>
-        </a>
+        </Link>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0">

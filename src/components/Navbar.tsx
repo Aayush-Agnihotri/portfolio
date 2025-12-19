@@ -3,12 +3,13 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <Popover className="container mx-auto absolute left-0 right-0 flex items-center px-6 py-2 h-24 sm:text-center">
       <div>
-        <a href="/">
+        <Link href="/">
           <div className="flex items-center gap-5">
             <Image
               src="/images/logo-light.png"
@@ -20,7 +21,7 @@ export default function Navbar() {
               Aayush Agnihotri
             </h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div className="grow">
         <div className="hidden sm:flex items-center justify-end gap-7">

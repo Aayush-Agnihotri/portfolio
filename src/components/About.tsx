@@ -1,7 +1,7 @@
 "use client";
 
 import Terminal from "./Terminal";
-import { RevealWrapper } from "next-reveal";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function About() {
@@ -23,14 +23,24 @@ export default function About() {
       <div className="w-4/5 mx-auto flex flex-col gap-5 items-center">
         <div className="flex flex-col">
           <div>
-            <RevealWrapper delay={0}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
               <h1 className={`text-4xl font-bold`}>About Me</h1>
-            </RevealWrapper>
+            </motion.div>
           </div>
 
           <div className="mt-5 flex flex-col gap-10 justify-center items-center xl:items-start xl:flex-row xl:gap-20">
             <div className={`w-4/5 mx-auto text-center xl:w-1/3`}>
-              <RevealWrapper origin="bottom" delay={0}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <p className="text-xl text-gray-500">
                   I am currently a student at{" "}
                   <span className="text-red-500">Cornell University</span>,
@@ -57,10 +67,15 @@ export default function About() {
                   Aside from school and programming, I enjoy working out at the
                   gym 🏋️, listening to music 🎵, or playing soccer ⚽.
                 </p>
-              </RevealWrapper>
+              </motion.div>
             </div>
 
-            <RevealWrapper origin="bottom" delay={0}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div
                 ref={ref}
                 onClick={(e) => handleClick(e)}
@@ -69,7 +84,7 @@ export default function About() {
               >
                 <Terminal />
               </div>
-            </RevealWrapper>
+            </motion.div>
           </div>
         </div>
       </div>
