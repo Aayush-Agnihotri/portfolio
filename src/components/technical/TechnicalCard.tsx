@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, CardHeader, Divider, Image } from "@heroui/react";
+import { Card, CardBody, CardHeader, Divider, Image } from "@nextui-org/react";
 import { useRef } from "react";
 import { useIsVisible } from "@/hooks/useIsVisible";
 

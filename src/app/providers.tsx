@@ -1,13 +1,13 @@
 // app/providers.tsx
 "use client";
 
-import { HeroUIProvider } from "@heroui/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { TerminalContextProvider } from "react-terminal";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <HeroUIProvider>
+    <NextUIProvider>
       <TerminalContextProvider>{children}</TerminalContextProvider>
-    </HeroUIProvider>
+    </NextUIProvider>
   );
 }

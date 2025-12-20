@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Card, CardBody, Chip } from "@heroui/react";
+import { Card, CardBody, Chip } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLaptop,

@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Tooltip } from "@heroui/react";
+import { Tooltip } from "@nextui-org/react";
 import {
   faEnvelope,
   faArrowUpRightFromSquare,
