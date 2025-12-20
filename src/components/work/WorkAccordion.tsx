@@ -6,8 +6,7 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import { WorkData } from "./WorkData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
-import { useIsVisible } from "@/hooks/useIsVisible";
+import { motion } from "framer-motion";
 
 export interface WorkDataInterface {
   company: string;
@@ -18,15 +17,12 @@ export interface WorkDataInterface {
 }
 
 export default function WorkAccordion() {
-  const accordionRef = useRef(null);
-  const accordionIsVisible = useIsVisible(accordionRef);
-
   return (
-    <div
-      ref={accordionRef}
-      className={`ease-in transition-all duration-1000
-        ${accordionIsVisible ? "translate-y-0" : "translate-y-20"}
-        ${accordionIsVisible ? "opacity-100" : "opacity-0"}`}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
     >
       <Accordion
         selectionMode="multiple"
@@ -59,6 +55,6 @@ export default function WorkAccordion() {
           </AccordionItem>
         ))}
       </Accordion>
-    </div>
+    </motion.div>
   );
 }

@@ -8,8 +8,7 @@ import {
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faAppStoreIos } from "@fortawesome/free-brands-svg-icons";
-import { useRef } from "react";
-import { useIsVisible } from "@/hooks/useIsVisible";
+import { motion } from "framer-motion";
 
 export interface ProjectDataInterface {
   name: string;
@@ -27,22 +26,19 @@ export interface ProjectDataInterface {
   };
 }
 
+const MotionCard = motion.create(Card);
+
 export default function ProjectCard({
   project,
 }: {
   project: ProjectDataInterface;
 }) {
-  const cardRef = useRef(null);
-  const cardIsVisible = useIsVisible(cardRef);
-
   return (
-    <Card
-      ref={cardRef}
-      className={`
-    ease-in transition-all duration-1000
-    ${cardIsVisible ? "translate-y-0" : "translate-y-20"}
-    ${cardIsVisible ? "opacity-100" : "opacity-0"}
-    `}
+    <MotionCard
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
     >
       <CardBody>
         <div className="flex flex-col gap-5 items-center lg:flex-row lg:items-start">
@@ -129,6 +125,6 @@ export default function ProjectCard({
           </div>
         </div>
       </CardBody>
-    </Card>
+    </MotionCard>
   );
 }

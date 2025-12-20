@@ -8,43 +8,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { InlineWidget } from "react-calendly";
-import { useRef } from "react";
-import { useIsVisible } from "@/hooks/useIsVisible";
+import { motion } from "framer-motion";
 
 export default function Contact() {
-  const headerRef = useRef(null);
-  const headerIsVisible = useIsVisible(headerRef);
-  const contentRef = useRef(null);
-  const contentIsVisible = useIsVisible(contentRef);
-  const calendlyRef = useRef(null);
-  const calendlyIsVisible = useIsVisible(calendlyRef);
-
   return (
     <div id="contact" className="bg-gray-50 py-5">
       <div className="mx-auto flex flex-col gap-5 items-center">
-        <div
-          ref={headerRef}
-          className={`flex flex-col items-center text-center w-4/5
-        ease-in transition-all duration-1000
-        ${headerIsVisible ? "translate-y-0" : "translate-y-20"}
-        ${headerIsVisible ? "opacity-100" : "opacity-0"}`}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="flex flex-col items-center text-center w-4/5"
         >
           <h1 className="text-4xl font-bold">Contact Me</h1>
           <p className="text-xl font-semibold text-gray-500">
             Feel free to shoot me an email or schedule a coffee chat through
             Calendly below.
           </p>
-        </div>
+        </motion.div>
 
         <div className="container mx-auto flex justify-center gap-5 flex-wrap lg:gap-20">
-          <div className="flex flex-col gap-5 justify-center text-center">
-            <div
-              ref={contentRef}
-              className={`flex justify-evenly md:justify-start
-            ease-in transition-all duration-1000
-            ${headerIsVisible ? "translate-y-0" : "translate-y-20"}
-            ${headerIsVisible ? "opacity-100" : "opacity-0"}`}
-            >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="flex flex-col gap-5 justify-center text-center"
+          >
+            <div className="flex justify-evenly md:justify-start">
               <Tooltip
                 content="Email"
                 showArrow={true}
@@ -101,14 +93,14 @@ export default function Contact() {
                 </a>
               </Tooltip>
             </div>
-          </div>
+          </motion.div>
 
-          <div
-            ref={calendlyRef}
-            className={`w-4/5 md:w-96
-          ease-in transition-all duration-1000
-          ${headerIsVisible ? "translate-y-0" : "translate-y-20"}
-          ${headerIsVisible ? "opacity-100" : "opacity-0"}`}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="w-4/5 md:w-96"
           >
             <InlineWidget
               url={"https://calendly.com/aayush-agnihotri"}
@@ -117,7 +109,7 @@ export default function Contact() {
                 width: "100%",
               }}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

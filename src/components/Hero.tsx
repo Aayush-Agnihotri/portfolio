@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 import { Tooltip } from "@nextui-org/react";
 import {
   faEnvelope,
@@ -16,25 +17,30 @@ export default function Hero() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    const listenToScroll = () => {
+      let heightToHideFrom = 650;
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+
+      if (winScroll > heightToHideFrom) {
+        isVisible && setIsVisible(false);
+      } else if (winScroll < 50) {
+        setIsVisible(true);
+      }
+    };
+
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
-  }, []);
-
-  const listenToScroll = () => {
-    let heightToHideFrom = 650;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    if (winScroll > heightToHideFrom) {
-      isVisible && setIsVisible(false);
-    } else if (winScroll < 50) {
-      setIsVisible(true);
-    }
-  };
+  }, [isVisible]);
 
   return (
     <div className="container mx-auto flex flex-col items-center justify-center p-10 gap-5 h-screen md:gap-20 md:flex-row">
-      <div className="flex items-center animate-in slide-in-from-left duration-500">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center"
+      >
         <Image
           className="rounded-full"
           src="/images/headshot.jpeg"
@@ -42,8 +48,13 @@ export default function Hero() {
           width={200}
           height={160}
         />
-      </div>
-      <div className="flex flex-col items-center text-center md:items-start animate-in slide-in-from-right duration-500">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center text-center md:items-start"
+      >
         <h1 className="text-4xl font-bold">Hey, I&apos;m Aayush.</h1>
         <div className="h-5">
           <span className="text-xl mt-1 font-semibold text-blue-500">
@@ -124,17 +135,20 @@ export default function Hero() {
             </a>
           </Tooltip>
         </div>
-      </div>
+      </motion.div>
 
       {isVisible && (
-        <div
+        <motion.div
           id="arrow"
-          className="absolute bottom-10 animate-in slide-in-from-top duration-500"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="absolute bottom-10"
         >
           <a href="#about" className="hover:opacity-60">
             <FontAwesomeIcon icon={faChevronDown} size="2x" />
           </a>
-        </div>
+        </motion.div>
       )}
     </div>
   );
