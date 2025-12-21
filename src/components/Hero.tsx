@@ -47,7 +47,7 @@ export default function Hero() {
           BLOOM: true, // Enable bloom
           BLOOM_ITERATIONS: 4, // Number of bloom iterations
           BLOOM_RESOLUTION: 256, // Resolution of bloom
-          BLOOM_INTENSITY: 0.1, // Intensity of bloom
+          BLOOM_INTENSITY: 0.5, // Intensity of bloom
           BLOOM_THRESHOLD: 0.8, // Threshold for bloom
           BLOOM_SOFT_KNEE: 0.7, // Soft knee for bloom
           SUNRAYS: false, // Enable sunrays
@@ -77,10 +77,7 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 z-0 h-full w-full"
-      />
+      <canvas ref={canvasRef} className="absolute inset-0 z-0 h-full w-full" />
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center p-10 gap-5 h-screen md:gap-20 md:flex-row pointer-events-none">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
