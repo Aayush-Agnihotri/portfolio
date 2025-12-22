@@ -1,9 +1,16 @@
-import { WorkDataInterface } from "./WorkAccordion";
+export interface WorkDataInterface {
+  company: string;
+  role: string;
+  date: string;
+  details: string[];
+  image: string;
+  skills: string[];
+}
 
 export const WorkData: WorkDataInterface[] = [
   {
     company: "Cornell AppDev",
-    role: "Vice Team Lead | Previously Backend Lead, Developer, & Course Instructor",
+    role: "Team Lead | Previously Vice Team Lead, Backend Lead, Developer, & Course Instructor",
     date: "September 2023 - Present",
     details: [
       "Lead all development and delivery for an open-source team of 60+ students building apps with 15,000+ users",
@@ -11,6 +18,7 @@ export const WorkData: WorkDataInterface[] = [
       "Taught weekly sessions to 100+ students focusing on client-server architecture, database design, and DevOps",
     ],
     image: "/images/aidev.png",
+    skills: ["Node.js", "Express", "TypeScript", "Docker", "Agile"],
   },
   {
     company: "Google",
@@ -22,6 +30,7 @@ export const WorkData: WorkDataInterface[] = [
       "Developed an agentic AI system to generate LLM prompts, resulting in an 8x increase in prompt engineering output",
     ],
     image: "/images/google.png",
+    skills: ["Python", "GCP", "Vertex AI", "LLMs", "RAG"],
   },
   {
     company: "Paramount",
@@ -33,6 +42,7 @@ export const WorkData: WorkDataInterface[] = [
       "Deployed microservice on AWS Lambda and Jenkins using CI/CD pipelines, processing 9,000+ media hours yearly",
     ],
     image: "/images/paramount.png",
+    skills: ["TensorFlow", "PyTorch", "AWS", "Spark", "Jenkins"],
   },
   {
     company: "Johnson & Johnson",
@@ -44,6 +54,7 @@ export const WorkData: WorkDataInterface[] = [
       "Integrated Milvus vector database to store/retrieve embeddings and single sign-on (SSO) through Microsoft Azure",
     ],
     image: "/images/jnj.png",
+    skills: ["React", "LangChain", "Django", "NLP", "Azure"],
   },
   {
     company: "Cornell Nexus",
@@ -55,5 +66,6 @@ export const WorkData: WorkDataInterface[] = [
       "Simulated traversal algorithms and finite-state machine paths to optimize robot navigation strategies",
     ],
     image: "/images/nexus.png",
+    skills: ["React", "Node.js", "Python", "NumPy", "Algorithms"],
   },
 ];

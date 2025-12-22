@@ -68,17 +68,40 @@ export default function Terminal() {
     ),
     whoami: (
       <div className="xl:max-w-xl">
-        <p><span className="text-green-400">&gt;</span> <span className="text-yellow-300 font-semibold">Aayush Agnihotri</span></p>
-        <p><span className="text-green-400">&gt;</span> <span className="text-blue-300">Cornell University</span></p>
-        <p><span className="text-green-400">&gt;</span> <span className="text-purple-300">MEng in Computer Science</span></p>
-        <p><span className="text-green-400">&gt;</span> <span className="text-gray-300">Background in </span><span className="text-cyan-300">full stack development</span><span className="text-gray-300"> and </span><span className="text-cyan-300">machine learning</span></p>
+        <p>
+          <span className="text-green-400">&gt;</span>{" "}
+          <span className="text-yellow-300 font-semibold">
+            Aayush Agnihotri
+          </span>
+        </p>
+        <p>
+          <span className="text-green-400">&gt;</span>{" "}
+          <span className="text-blue-300">Cornell University</span>
+        </p>
+        <p>
+          <span className="text-green-400">&gt;</span>{" "}
+          <span className="text-purple-300">MEng in Computer Science</span>
+        </p>
+        <p>
+          <span className="text-green-400">&gt;</span>{" "}
+          <span className="text-gray-300">Background in </span>
+          <span className="text-cyan-300">full stack development</span>
+          <span className="text-gray-300"> and </span>
+          <span className="text-cyan-300">machine learning</span>
+        </p>
       </div>
     ),
     website: (
       <div className="xl:max-w-xl">
         <p>
-          <span className="text-green-400">&gt;</span> <span className="text-gray-300">This website was created using </span><span className="text-emerald-400 font-semibold">Next.js 14</span><span className="text-gray-300"> and </span><span className="text-sky-400 font-semibold">Tailwind CSS</span><span className="text-gray-300">. To
-          see the GitHub repository, click</span>{" "}
+          <span className="text-green-400">&gt;</span>{" "}
+          <span className="text-gray-300">This website was created using </span>
+          <span className="text-emerald-400 font-semibold">Next.js 14</span>
+          <span className="text-gray-300"> and </span>
+          <span className="text-sky-400 font-semibold">Tailwind CSS</span>
+          <span className="text-gray-300">
+            . To see the GitHub repository, click
+          </span>{" "}
           <a
             className="text-blue-400 underline hover:text-blue-300 transition-colors"
             href="https://github.com/Aayush-Agnihotri/website"
@@ -109,20 +132,36 @@ export default function Terminal() {
     awards: (
       <div className="xl:max-w-xl">
         <p>
-          &gt; <span className="text-orange-400 font-semibold">JPMorgan Chase</span> <span className="text-yellow-300">🥇 First
-          Place Winner</span> <span className="text-gray-300">at Technology for Social Good 2021</span>
+          &gt;{" "}
+          <span className="text-orange-400 font-semibold">JPMorgan Chase</span>{" "}
+          <span className="text-yellow-300">🥇 First Place Winner</span>{" "}
+          <span className="text-gray-300">
+            at Technology for Social Good 2021
+          </span>
         </p>
         <p>
-          &gt; <span className="text-orange-400 font-semibold">TSA</span> <span className="text-yellow-300">🥇 First Place Winner</span>
-          <span className="text-gray-300"> State Software Development Competition 2021</span>
+          &gt; <span className="text-orange-400 font-semibold">TSA</span>{" "}
+          <span className="text-yellow-300">🥇 First Place Winner</span>
+          <span className="text-gray-300">
+            {" "}
+            State Software Development Competition 2021
+          </span>
         </p>
         <p>
-          &gt; <span className="text-orange-400 font-semibold">TSA</span> <span className="text-amber-300">🥉 Third Place Winner</span>
-          <span className="text-gray-300"> National Software Development Competition 2021</span>
+          &gt; <span className="text-orange-400 font-semibold">TSA</span>{" "}
+          <span className="text-amber-300">🥉 Third Place Winner</span>
+          <span className="text-gray-300">
+            {" "}
+            National Software Development Competition 2021
+          </span>
         </p>
         <p>
-          &gt; <span className="text-orange-400 font-semibold">JPMorgan Chase</span> <span className="text-yellow-300">🥇 First
-          Place Winner</span> <span className="text-gray-300">at Technology for Social Good 2018</span>
+          &gt;{" "}
+          <span className="text-orange-400 font-semibold">JPMorgan Chase</span>{" "}
+          <span className="text-yellow-300">🥇 First Place Winner</span>{" "}
+          <span className="text-gray-300">
+            at Technology for Social Good 2018
+          </span>
         </p>
       </div>
     ),
@@ -130,7 +169,8 @@ export default function Terminal() {
       <div className="xl:max-w-xl">
         {TechnicalData.map((data, i) => (
           <p key={i}>
-            <span className="text-green-400">&gt;</span> <span className="text-orange-400 font-semibold">{data.type}:</span>{" "}
+            <span className="text-green-400">&gt;</span>{" "}
+            <span className="text-orange-400 font-semibold">{data.type}:</span>{" "}
             {data.skills.map((skill, j) => (
               <span key={j}>
                 <span className="text-cyan-300">{skill.name}</span>
@@ -145,7 +185,8 @@ export default function Terminal() {
       <div className="xl:max-w-xl">
         {ProjectData.map((data, i) => (
           <p key={i}>
-            <span className="text-green-400">&gt;</span> <span className="text-orange-400 font-semibold">{data.name}:</span>{" "}
+            <span className="text-green-400">&gt;</span>{" "}
+            <span className="text-orange-400 font-semibold">{data.name}:</span>{" "}
             <span className="text-gray-300">{data.description}</span>
             {data.links.app && (
               <>
@@ -211,8 +252,12 @@ export default function Terminal() {
       <div className="xl:max-w-xl">
         {WorkData.map((data, i) => (
           <p key={i}>
-            <span className="text-green-400">&gt;</span> <span className="text-orange-400 font-semibold">{data.company}:</span>{" "}
-            <span className="text-purple-300">{data.role}</span> <span className="text-gray-500">({data.date})</span>
+            <span className="text-green-400">&gt;</span>{" "}
+            <span className="text-orange-400 font-semibold">
+              {data.company}:
+            </span>{" "}
+            <span className="text-purple-300">{data.role}</span>{" "}
+            <span className="text-gray-500">({data.date})</span>
           </p>
         ))}
       </div>

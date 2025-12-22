@@ -1,11 +1,11 @@
 "use client";
 
-import WorkAccordion from "./WorkAccordion";
+import WorkTimeline from "./WorkTimeline";
 import { motion } from "framer-motion";
 
 export default function Work() {
   return (
-    <div className="flex flex-col py-10">
+    <div className="w-full flex flex-col py-10">
       <div className="flex flex-col items-center mb-5 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -18,8 +18,8 @@ export default function Work() {
         </motion.h1>
       </div>
 
-      <div className="container w-4/5 mx-auto">
-        <WorkAccordion />
+      <div className="container mx-auto">
+        <WorkTimeline />
       </div>
     </div>
   );
