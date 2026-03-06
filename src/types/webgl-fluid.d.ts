@@ -1,5 +1,5 @@
 declare module "webgl-fluid" {
-  interface WebGLFluidConfig {
+  export interface WebGLFluidConfig {
     TRIGGER?: string;
     IMMEDIATE?: boolean;
     AUTO?: boolean;

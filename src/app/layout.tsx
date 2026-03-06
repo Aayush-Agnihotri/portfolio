@@ -10,6 +10,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aayush-agnihotri.me/"),
   title: "Aayush Agnihotri",
   description:
     "Aayush Agnihotri, software developer, student, open source contributor, entrepreneur",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     title: "Aayush Agnihotri",
     description:
       "Aayush Agnihotri, software developer, student, open source contributor, entrepreneur",
-    url: "https://aayushagnihotri.com",
+    url: "https://aayush-agnihotri.me/",
     siteName: "Aayush Agnihotri",
     images: [
       {
@@ -35,12 +36,10 @@ export const metadata: Metadata = {
       {
         media: "(prefers-color-scheme: light)",
         url: "/images/logo-light.png",
-        href: "/images/logo-light.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
         url: "/images/logo-light.png",
-        href: "/images/logo-light.png",
       },
     ],
   },
@@ -52,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" style={{ scrollBehavior: "smooth" }}>
+    <html lang="en">
       <body className={`${outfit.variable} font-sans`}>
         <ScrollProgress />
         <Providers>{children}</Providers>

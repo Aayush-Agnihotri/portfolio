@@ -88,7 +88,7 @@ export default function Contact() {
                   target="_blank"
                 >
                   <FontAwesomeIcon icon={faGithub} size="2x" />
-                  &nbsp; github.com/aayush-agnihotri &nbsp;
+                  &nbsp; github.com/Aayush-Agnihotri &nbsp;
                   <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="2xs" />
                 </a>
               </Tooltip>

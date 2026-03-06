@@ -23,7 +23,7 @@ export default function Technical() {
       </div>
 
       <div className="w-4/5 mx-auto flex flex-wrap gap-14 justify-center">
-        {TechnicalData.map((data, _) => (
+        {TechnicalData.map((data) => (
           <TechnicalCard key={data.type} {...data} />
         ))}
       </div>

@@ -174,7 +174,11 @@ export default function Terminal() {
             {data.skills.map((skill, j) => (
               <span key={j}>
                 <span className="text-cyan-300">{skill.name}</span>
-                {j != 3 ? <span className="text-gray-500">, </span> : ""}
+                {j !== data.skills.length - 1 ? (
+                  <span className="text-gray-500">, </span>
+                ) : (
+                  ""
+                )}
               </span>
             ))}
           </p>
@@ -333,9 +337,7 @@ export default function Terminal() {
             />
           </div>
         </div>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </>
   );
 }

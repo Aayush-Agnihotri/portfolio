@@ -45,18 +45,6 @@ export const WorkData: WorkDataInterface[] = [
     skills: ["TensorFlow", "PyTorch", "AWS", "Spark", "Jenkins"],
   },
   {
-    company: "Johnson & Johnson",
-    role: "Software Engineer Intern, Intelligent Automation",
-    date: "May 2023 - August 2023",
-    details: [
-      "Developed a RAG LLM in React, LangChain, and Django with 10,000+ users, achieving annual savings of $20,000+",
-      "Applied NLP algorithms to create text-based vector embeddings, optimizing document semantic search by 70%",
-      "Integrated Milvus vector database to store/retrieve embeddings and single sign-on (SSO) through Microsoft Azure",
-    ],
-    image: "/images/jnj.png",
-    skills: ["React", "LangChain", "Django", "NLP", "Azure"],
-  },
-  {
     company: "Cornell Nexus",
     role: "Software Engineer",
     date: "September 2022 - December 2023",
@@ -67,5 +55,17 @@ export const WorkData: WorkDataInterface[] = [
     ],
     image: "/images/nexus.png",
     skills: ["React", "Node.js", "Python", "NumPy", "Algorithms"],
+  },
+  {
+    company: "Johnson & Johnson",
+    role: "Software Engineer Intern, Intelligent Automation",
+    date: "May 2023 - August 2023",
+    details: [
+      "Developed a RAG LLM in React, LangChain, and Django with 10,000+ users, achieving annual savings of $20,000+",
+      "Applied NLP algorithms to create text-based vector embeddings, optimizing document semantic search by 70%",
+      "Integrated Milvus vector database to store/retrieve embeddings and single sign-on (SSO) through Microsoft Azure",
+    ],
+    image: "/images/jnj.png",
+    skills: ["React", "LangChain", "Django", "NLP", "Azure"],
   },
 ];

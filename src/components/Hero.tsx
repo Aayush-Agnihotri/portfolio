@@ -12,50 +12,90 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import type { WebGLFluidConfig } from "webgl-fluid";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const fluidConfigRef = useRef<WebGLFluidConfig | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas) {
-      import("webgl-fluid").then((module) => {
-        const WebGLFluid = module.default;
-        WebGLFluid(canvas, {
-          TRIGGER: "hover", // Can be 'click', 'hover', 'immediate', 'auto'
-          IMMEDIATE: true, // Trigger immediately on load
-          AUTO: false, // Automatically trigger splats
-          INTERVAL: 0, // Interval for auto splats
-          SIM_RESOLUTION: 128, // Resolution of the simulation grid
-          DYE_RESOLUTION: 512, // Resolution of the dye grid
-          CAPTURE_RESOLUTION: 512, // Resolution of captured frames
-          DENSITY_DISSIPATION: 0.5, // Rate at which density dissipates
-          VELOCITY_DISSIPATION: 0.1, // Rate at which velocity dissipates
-          PRESSURE: 0.1, // Pressure value
-          PRESSURE_ITERATIONS: 20, // Number of pressure iterations
-          CURL: 3, // Curl value (vorticity)
-          SPLAT_RADIUS: 0.1, // Radius of splats
-          SPLAT_FORCE: 4000, // Force of splats
-          SPLAT_COUNT: 0, // Number of splats on load
-          SHADING: true, // Enable shading
-          COLORFUL: true, // Enable colorful splats
-          COLOR_UPDATE_SPEED: 10, // Speed of color update
-          PAUSED: false, // Pause simulation
-          BACK_COLOR: { r: 255, g: 255, b: 255 }, // Background color
-          TRANSPARENT: false, // Transparent background
-          BLOOM: true, // Enable bloom
-          BLOOM_ITERATIONS: 4, // Number of bloom iterations
-          BLOOM_RESOLUTION: 256, // Resolution of bloom
-          BLOOM_INTENSITY: 0.5, // Intensity of bloom
-          BLOOM_THRESHOLD: 0.8, // Threshold for bloom
-          BLOOM_SOFT_KNEE: 0.7, // Soft knee for bloom
-          SUNRAYS: false, // Enable sunrays
-          SUNRAYS_RESOLUTION: 196, // Resolution of sunrays
-          SUNRAYS_WEIGHT: 0.4, // Weight of sunrays
+      import("webgl-fluid")
+        .then((module) => {
+          const WebGLFluid = module.default;
+          const config = {
+            TRIGGER: "hover", // Can be 'click', 'hover', 'immediate', 'auto'
+            IMMEDIATE: true, // Trigger immediately on load
+            AUTO: false, // Automatically trigger splats
+            INTERVAL: 0, // Interval for auto splats
+            SIM_RESOLUTION: 128, // Resolution of the simulation grid
+            DYE_RESOLUTION: 512, // Resolution of the dye grid
+            CAPTURE_RESOLUTION: 512, // Resolution of captured frames
+            DENSITY_DISSIPATION: 0.5, // Rate at which density dissipates
+            VELOCITY_DISSIPATION: 0.1, // Rate at which velocity dissipates
+            PRESSURE: 0.1, // Pressure value
+            PRESSURE_ITERATIONS: 20, // Number of pressure iterations
+            CURL: 3, // Curl value (vorticity)
+            SPLAT_RADIUS: 0.1, // Radius of splats
+            SPLAT_FORCE: 4000, // Force of splats
+            SPLAT_COUNT: 0, // Number of splats on load
+            SHADING: true, // Enable shading
+            COLORFUL: true, // Enable colorful splats
+            COLOR_UPDATE_SPEED: 10, // Speed of color update
+            PAUSED: false, // Pause simulation
+            BACK_COLOR: { r: 255, g: 255, b: 255 }, // Background color
+            TRANSPARENT: false, // Transparent background
+            BLOOM: true, // Enable bloom
+            BLOOM_ITERATIONS: 4, // Number of bloom iterations
+            BLOOM_RESOLUTION: 256, // Resolution of bloom
+            BLOOM_INTENSITY: 0.5, // Intensity of bloom
+            BLOOM_THRESHOLD: 0.8, // Threshold for bloom
+            BLOOM_SOFT_KNEE: 0.7, // Soft knee for bloom
+            SUNRAYS: false, // Enable sunrays
+            SUNRAYS_RESOLUTION: 196, // Resolution of sunrays
+            SUNRAYS_WEIGHT: 0.4, // Weight of sunrays
+          };
+          fluidConfigRef.current = config;
+          WebGLFluid(canvas, config);
+        })
+        .catch(() => {
+          // Silently fail - WebGL fluid is a visual enhancement only
         });
-      });
     }
+
+    return () => {
+      // Cleanup: pause simulation on unmount
+      if (fluidConfigRef.current) {
+        fluidConfigRef.current.PAUSED = true;
+      }
+    };
+  }, []);
+
+  // Monitor hero section visibility and pause/resume simulation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (fluidConfigRef.current) {
+            fluidConfigRef.current.PAUSED = !entry.isIntersecting;
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const heroElement = canvasRef.current?.parentElement;
+    if (heroElement) {
+      observer.observe(heroElement);
+    }
+
+    return () => {
+      if (heroElement) {
+        observer.unobserve(heroElement);
+      }
+    };
   }, []);
 
   useEffect(() => {

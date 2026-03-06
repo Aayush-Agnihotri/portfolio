@@ -21,7 +21,9 @@ export default function Footer() {
         </Link>
       </div>
       <div>
-        <h1 className="font-bold text-white">Aayush Agnihotri &copy; 2025</h1>
+        <h1 className="font-bold text-white">
+          Aayush Agnihotri &copy; {new Date().getFullYear()}
+        </h1>
       </div>
       <div className="flex justify-center gap-5">
         <Tooltip
