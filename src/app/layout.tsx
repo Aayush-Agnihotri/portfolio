@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 import { Providers } from "./providers";
 import ScrollProgress from "@/components/ScrollProgress";
 
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Aayush Agnihotri",
     images: [
       {
-        url: "/images/website-screenshot.jpeg",
+        url: "/images/website-screenshot.webp",
         width: 1200,
         height: 630,
         alt: "Aayush Agnihotri",
@@ -35,11 +38,11 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/images/logo-light.png",
+        url: "/images/logo-light.webp",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/images/logo-light.png",
+        url: "/images/logo-light.webp",
       },
     ],
   },

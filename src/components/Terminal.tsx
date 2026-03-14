@@ -442,6 +442,7 @@ export default function Terminal() {
                 me@terminal:~${" "}
               </span>
               <input
+                aria-label="Terminal command input"
                 ref={inputRef}
                 type="text"
                 value={input}

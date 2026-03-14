@@ -12,7 +12,7 @@ export default function Navbar() {
         <Link href="/">
           <div className="flex items-center gap-5">
             <Image
-              src="/images/logo-light.png"
+              src="/images/logo-light.webp"
               alt="Aayush Agnihotri Logo"
               width={35}
               height={35}

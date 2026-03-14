@@ -125,7 +125,7 @@ export default function Contact() {
                 variant="bordered"
                 minRows={5}
               />
-              <Button type="submit" color="primary" className="w-full font-semibold text-lg py-6">
+              <Button type="submit" className="bg-blue-600 text-white w-full font-semibold text-lg py-6">
                 Send Message
               </Button>
             </form>

@@ -17,7 +17,7 @@ export const WorkData: WorkDataInterface[] = [
       "Collaborate with iOS, Android, Backend, Design, and Marketing teams using Agile to create and maintain apps",
       "Taught weekly sessions to 100+ students focusing on client-server architecture, database design, and DevOps",
     ],
-    image: "/images/aidev.png",
+    image: "/images/aidev.webp",
     skills: ["Node.js", "Express", "TypeScript", "Docker", "Agile"],
   },
   {
@@ -29,7 +29,7 @@ export const WorkData: WorkDataInterface[] = [
       "Integrated an autorater evaluation framework within a RAG system, leading to a 39% increase in generation quality",
       "Developed an agentic AI system to generate LLM prompts, resulting in an 8x increase in prompt engineering output",
     ],
-    image: "/images/google.png",
+    image: "/images/google.webp",
     skills: ["Python", "GCP", "Vertex AI", "LLMs", "RAG"],
   },
   {
@@ -41,7 +41,7 @@ export const WorkData: WorkDataInterface[] = [
       "Utilized parallel computing via Spark and Jupyter Notebooks to train neural networks, reducing train time by 80%",
       "Deployed microservice on AWS Lambda and Jenkins using CI/CD pipelines, processing 9,000+ media hours yearly",
     ],
-    image: "/images/paramount.png",
+    image: "/images/paramount.webp",
     skills: ["TensorFlow", "PyTorch", "AWS", "Spark", "Jenkins"],
   },
   {
@@ -53,7 +53,7 @@ export const WorkData: WorkDataInterface[] = [
       "Coordinated with an 8-member team to build robot field visualization software in Python using Numpy",
       "Simulated traversal algorithms and finite-state machine paths to optimize robot navigation strategies",
     ],
-    image: "/images/nexus.png",
+    image: "/images/nexus.webp",
     skills: ["React", "Node.js", "Python", "NumPy", "Algorithms"],
   },
   {
@@ -65,7 +65,7 @@ export const WorkData: WorkDataInterface[] = [
       "Applied NLP algorithms to create text-based vector embeddings, optimizing document semantic search by 70%",
       "Integrated Milvus vector database to store/retrieve embeddings and single sign-on (SSO) through Microsoft Azure",
     ],
-    image: "/images/jnj.png",
+    image: "/images/jnj.webp",
     skills: ["React", "LangChain", "Django", "NLP", "Azure"],
   },
 ];

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
@@ -21,6 +21,7 @@
     "react": "^18",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
+    "sharp": "^0.34.5",
     "typewriter-effect": "^2.21.0",
     "webgl-fluid": "^0.3.9"
   },

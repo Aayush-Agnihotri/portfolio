@@ -127,10 +127,12 @@ export default function Hero() {
         >
           <Image
             className="rounded-full relative border-2 border-white/50 shadow-xl"
-            src="/images/headshot.jpeg"
+            src="/images/headshot.webp"
             alt="Picture of Aayush Agnihotri"
             width={200}
             height={160}
+            priority
+            fetchPriority="high"
           />
         </motion.div>
         <motion.div
@@ -165,6 +167,7 @@ export default function Hero() {
               closeDelay={0}
             >
               <a
+                aria-label="Resume"
                 href="/documents/Aayush Agnihotri Resume.pdf"
                 className="hover:opacity-60"
                 rel="noopener noreferrer"
@@ -180,6 +183,7 @@ export default function Hero() {
               closeDelay={0}
             >
               <a
+                aria-label="GitHub"
                 href="https://github.com/Aayush-Agnihotri"
                 className="hover:opacity-60"
                 rel="noopener noreferrer"
@@ -195,6 +199,7 @@ export default function Hero() {
               closeDelay={0}
             >
               <a
+                aria-label="LinkedIn"
                 href="https://www.linkedin.com/in/aayush-agnihotri/"
                 className="hover:opacity-60"
                 rel="noopener noreferrer"
@@ -210,6 +215,7 @@ export default function Hero() {
               closeDelay={0}
             >
               <a
+                aria-label="Email"
                 href="mailto:aa2328@cornell.edu"
                 className="hover:opacity-60"
                 rel="noopener noreferrer"
@@ -233,7 +239,7 @@ export default function Hero() {
             }}
             className="absolute bottom-10 flex flex-col items-center gap-2 pointer-events-auto"
           >
-            <a href="#about" className="hover:opacity-60 transition-colors">
+            <a aria-label="Scroll down to about section" href="#about" className="hover:opacity-60 transition-colors">
               <FontAwesomeIcon icon={faChevronDown} size="2x" />
             </a>
           </motion.div>

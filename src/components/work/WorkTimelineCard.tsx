@@ -44,9 +44,9 @@ export default function WorkTimelineCard({
               />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 text-lg leading-tight">
+              <h2 className="font-bold text-gray-900 text-lg leading-tight">
                 {experience.company}
-              </h3>
+              </h2>
               <p className="text-sm text-gray-500 font-medium">
                 {experience.role}
               </p>
