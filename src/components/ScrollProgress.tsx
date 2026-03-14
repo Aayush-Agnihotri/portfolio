@@ -16,7 +16,7 @@ export default function ScrollProgress() {
       setScrollProgress(scrolled);
     };
 
-    window.addEventListener("scroll", updateScrollProgress);
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
     updateScrollProgress(); // Initial calculation
 
     return () => {

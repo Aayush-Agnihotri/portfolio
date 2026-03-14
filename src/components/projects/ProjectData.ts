@@ -27,7 +27,7 @@ export const ProjectData: ProjectDataInterface[] = [
     name: "Eatery",
     stack: ["Python", "Django", "PostgreSQL", "AWS", "Docker"],
     description:
-      "Eatery is a Cornell Dining app with 40,000+ downloads, allowing 10,000+ students and facility to track menu items and schedules for dining halls and resturants.",
+      "Eatery is a Cornell Dining app with 40,000+ downloads, allowing 10,000+ students and faculty to track menu items and schedules for dining halls and restaurants.",
     imageUrl: "/images/eatery.webp",
     links: {
       github: "https://github.com/cuappdev/eatery-blue-backend",
@@ -48,7 +48,7 @@ export const ProjectData: ProjectDataInterface[] = [
     name: "Volume",
     stack: ["TypeScript", "Python", "MongoDB", "GraphQL", "AWS", "Docker"],
     description:
-      "Volume is a cross-platform open-source Cornell student publication app with 1,000+ users, facilitating the exploration, sharing, and saving of content and the amplifcation of student voices.",
+      "Volume is a cross-platform open-source Cornell student publication app with 1,000+ users, facilitating the exploration, sharing, and saving of content and the amplification of student voices.",
     imageUrl: "/images/volume.webp",
     links: {
       github: "https://github.com/cuappdev/volume-backend",

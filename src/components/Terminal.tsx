@@ -122,7 +122,7 @@ export default function Terminal() {
         <p>
           <span className="text-green-400">&gt;</span>{" "}
           <span className="text-gray-300">This website was created using </span>
-          <span className="text-emerald-400 font-semibold">Next.js 14</span>
+          <span className="text-emerald-400 font-semibold">Next.js 15</span>
           <span className="text-gray-300"> and </span>
           <span className="text-sky-400 font-semibold">Tailwind CSS</span>
           <span className="text-gray-300">
