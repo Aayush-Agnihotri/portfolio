@@ -411,7 +411,7 @@ export default function Terminal() {
           </div>
           <div 
             ref={terminalRef}
-            className="overflow-y-auto overflow-x-hidden flex-1 w-full min-w-0 hover:cursor-text p-4 font-mono text-sm text-left rounded-b-lg"
+            className="overflow-y-auto overflow-x-hidden flex-1 w-full min-w-0 hover:cursor-text p-4 font-mono text-base md:text-sm text-left rounded-b-lg"
             style={{ 
               backgroundColor: theme.themeBGColor,
               color: theme.themeColor 
