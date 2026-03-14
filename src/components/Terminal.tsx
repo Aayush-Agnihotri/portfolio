@@ -1,17 +1,33 @@
 "use client";
 
-import { ReactTerminal } from "react-terminal";
 import { TechnicalData } from "./technical/TechnicalData";
 import { ProjectData } from "./projects/ProjectData";
 import { WorkData } from "./work/WorkData";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, KeyboardEvent } from "react";
+
+type HistoryEntry = {
+  command: string;
+  output: React.ReactNode;
+};
 
 export default function Terminal() {
   const [isClient, setIsClient] = useState(false);
+  const [input, setInput] = useState("");
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const terminalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (terminalRef.current) {
+      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+    }
+  }, [history]);
 
   const welcomeMessage = (
     <div>
@@ -286,11 +302,69 @@ export default function Terminal() {
     },
   };
 
+  const theme = themes["custom-theme"];
+
+  const handleCommand = (cmd: string) => {
+    const trimmedCmd = cmd.trim().toLowerCase();
+    
+    if (trimmedCmd === "clear") {
+      setHistory([]);
+      return;
+    }
+
+    const output = commands[trimmedCmd as keyof typeof commands] || errorMessage;
+    
+    setHistory((prev) => [...prev, { command: cmd, output }]);
+    setCommandHistory((prev) => [...prev, cmd]);
+    setHistoryIndex(-1);
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (input.trim()) {
+        handleCommand(input);
+        setInput("");
+      }
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (commandHistory.length > 0) {
+        const newIndex = historyIndex === -1 
+          ? commandHistory.length - 1 
+          : Math.max(0, historyIndex - 1);
+        setHistoryIndex(newIndex);
+        setInput(commandHistory[newIndex]);
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (historyIndex !== -1) {
+        const newIndex = historyIndex + 1;
+        if (newIndex >= commandHistory.length) {
+          setHistoryIndex(-1);
+          setInput("");
+        } else {
+          setHistoryIndex(newIndex);
+          setInput(commandHistory[newIndex]);
+        }
+      }
+    }
+  };
+
+  const stopInputKeyPropagation = (e: KeyboardEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+  };
+
+  const focusInput = () => {
+    inputRef.current?.focus();
+  };
+
   return (
     <>
       {isClient ? (
-        <div className="flex flex-col max-h-[400px] overflow-hidden">
-          <div className="bg-[#2a2d38]/90 backdrop-blur-md border-b border-gray-700/50 h-10 flex items-center px-4 z-50 rounded-t-lg -mb-[5px] flex-shrink-0">
+        <div className="flex flex-col w-full min-w-0 max-w-full max-h-[400px] overflow-hidden">
+          <div className="bg-[#2a2d38]/90 backdrop-blur-md border-b border-gray-700/50 h-10 w-full min-w-0 flex items-center px-4 z-50 rounded-t-lg -mb-[5px] flex-shrink-0">
             <div className="flex gap-2 w-16">
               <div
                 className="w-3 h-3 rounded-full bg-[#ff5f57] hover:bg-[#ff5f57]/80 transition-colors cursor-pointer flex items-center justify-center group"
@@ -322,19 +396,50 @@ export default function Terminal() {
             </div>
             <div className="w-16"></div>
           </div>
-          <div className="overflow-y-auto flex-1">
-            <ReactTerminal
-              className="hover:cursor-text overflow-x-hidden"
-              commands={commands}
-              prompt={"me@terminal:~$ "}
-              welcomeMessage={welcomeMessage}
-              enableInput={true}
-              showControlBar={false}
-              showControlButtons={false}
-              errorMessage={errorMessage}
-              theme={"custom-theme"}
-              themes={themes}
-            />
+          <div 
+            ref={terminalRef}
+            className="overflow-y-auto overflow-x-hidden flex-1 w-full min-w-0 hover:cursor-text p-4 font-mono text-sm text-left rounded-b-lg"
+            style={{ 
+              backgroundColor: theme.themeBGColor,
+              color: theme.themeColor 
+            }}
+            onClick={focusInput}
+          >
+            {/* Welcome message */}
+            <div className="mb-4 text-left">{welcomeMessage}</div>
+
+            {/* Command history */}
+            {history.map((entry, index) => (
+              <div key={index} className="mb-2 min-w-0 max-w-full text-left">
+                <div className="flex min-w-0 max-w-full items-center mb-1 text-left">
+                  <span className="shrink-0" style={{ color: theme.themePromptColor }}>
+                    me@terminal:~${" "}
+                  </span>
+                  <span className="ml-1 min-w-0 break-all">{entry.command}</span>
+                </div>
+                <div className="mb-2 min-w-0 max-w-full overflow-hidden whitespace-pre-wrap break-words" style={{ overflowWrap: "anywhere" }}>
+                  {entry.output}
+                </div>
+              </div>
+            ))}
+
+            {/* Input line */}
+            <div className="flex items-center min-w-0 max-w-full">
+              <span className="shrink-0" style={{ color: theme.themePromptColor }}>
+                me@terminal:~${" "}
+              </span>
+              <input
+                ref={inputRef}
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                onKeyUp={stopInputKeyPropagation}
+                className="flex-1 min-w-0 ml-1 bg-transparent outline-none border-none"
+                style={{ color: theme.themeColor }}
+                autoFocus
+              />
+            </div>
           </div>
         </div>
       ) : null}

@@ -22,7 +22,6 @@
     "react-calendly": "^4.3.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
-    "react-terminal": "^1.4.4",
     "typewriter-effect": "^2.21.0",
     "webgl-fluid": "^0.3.9"
   },
@@ -39,10 +38,5 @@
     "prettier": "^3.7.4",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  },
-  "overrides": {
-    "react-terminal": {
-      "react-device-detect": "^2.2.3"
-    }
   }
 }

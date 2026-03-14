@@ -30,8 +30,8 @@ export default function About() {
             </motion.div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-10 justify-center items-center xl:items-start xl:flex-row xl:gap-20">
-            <div className={`w-4/5 mx-auto text-center xl:w-1/3`}>
+          <div className="mt-5 flex w-full min-w-0 flex-col gap-10 justify-center items-center xl:items-start xl:flex-row xl:gap-12">
+            <div className="w-4/5 mx-auto text-center xl:w-1/2 xl:mx-0">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -68,6 +68,7 @@ export default function About() {
             </div>
 
             <motion.div
+              className="w-full min-w-0 xl:w-1/2"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -77,7 +78,7 @@ export default function About() {
                 ref={ref}
                 onClick={(e) => handleClick(e)}
                 onFocus={(e) => handleInputFocus(e)}
-                className={`max-h-unit-7xl overflow-x-hidden hover:cursor-text flex self-end`}
+                className="w-full min-w-0 max-h-unit-7xl overflow-hidden hover:cursor-text flex"
               >
                 <Terminal />
               </div>
