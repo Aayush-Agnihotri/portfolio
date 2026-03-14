@@ -41,8 +41,8 @@ export default function FluidBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 h-full w-full"
-      style={{ zIndex: 0, pointerEvents: "none" }}
+      className="fixed inset-0 h-full w-full pointer-events-none md:pointer-events-auto"
+      style={{ zIndex: 0 }}
     />
   );
 }
