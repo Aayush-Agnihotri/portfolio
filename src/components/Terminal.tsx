@@ -450,7 +450,6 @@ export default function Terminal() {
                 onKeyUp={stopInputKeyPropagation}
                 className="flex-1 min-w-0 ml-1 bg-transparent outline-none border-none block-cursor"
                 style={{ color: theme.themeColor }}
-                autoFocus
               />
             </div>
           </div>
