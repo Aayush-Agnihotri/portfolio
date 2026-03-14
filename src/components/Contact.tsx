@@ -1,13 +1,12 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Tooltip } from "@nextui-org/react";
+import { Tooltip, Input, Textarea, Button } from "@nextui-org/react";
 import {
   faEnvelope,
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { InlineWidget } from "react-calendly";
 import { motion } from "framer-motion";
 
 export default function Contact() {
@@ -23,8 +22,7 @@ export default function Contact() {
         >
           <h1 className="text-4xl font-bold">Contact Me</h1>
           <p className="text-xl font-semibold text-gray-500">
-            Feel free to shoot me an email or schedule a coffee chat through
-            Calendly below.
+            Feel free to shoot me an email or reach out through the form below.
           </p>
         </motion.div>
 
@@ -100,15 +98,37 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="w-4/5 md:w-96"
+            className="w-4/5 md:w-96 flex flex-col gap-4 py-4"
           >
-            <InlineWidget
-              url={"https://calendly.com/aayush-agnihotri"}
-              styles={{
-                height: "500px",
-                width: "100%",
-              }}
-            />
+            <form className="flex flex-col gap-4 w-full" action="https://formspree.io/f/mdawdwaa" method="POST">
+              <Input
+                type="text"
+                name="name"
+                label="Name"
+                placeholder="Enter your name"
+                isRequired
+                variant="bordered"
+              />
+              <Input
+                type="email"
+                name="email"
+                label="Email"
+                placeholder="Enter your email"
+                isRequired
+                variant="bordered"
+              />
+              <Textarea
+                name="message"
+                label="Message"
+                placeholder="Enter your message"
+                isRequired
+                variant="bordered"
+                minRows={5}
+              />
+              <Button type="submit" color="primary" className="w-full font-semibold text-lg py-6">
+                Send Message
+              </Button>
+            </form>
           </motion.div>
         </div>
       </div>
