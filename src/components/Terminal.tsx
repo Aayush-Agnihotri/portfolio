@@ -30,13 +30,23 @@ export default function Terminal() {
   }, [history]);
 
   const welcomeMessage = (
-    <div>
-      Welcome to <span className="text-orange-400">Aayush&apos;s</span> terminal
-      emulator!
-      <br />
-      Type a command to begin or <span className="text-cyan-400">help</span> to
-      see a list of commands.
-      <br />
+    <div className="w-full flex flex-col items-center">
+      <pre className="whitespace-pre leading-tight mb-2 text-[7px] sm:text-[9px] md:text-[11px] overflow-x-auto max-w-full text-left">
+        <span className="block font-semibold bg-gradient-to-r from-blue-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+{`    █████╗  █████╗ ██╗   ██╗██╗   ██╗███████╗██╗  ██╗      ██████╗██╗     ██╗
+   ██╔══██╗██╔══██╗╚██╗ ██╔╝██║   ██║██╔════╝██║  ██║     ██╔════╝██║     ██║
+   ███████║███████║ ╚████╔╝ ██║   ██║███████╗███████║     ██║     ██║     ██║
+   ██╔══██║██╔══██║  ╚██╔╝  ██║   ██║╚════██║██╔══██║     ██║     ██║     ██║
+   ██║  ██║██║  ██║   ██║   ╚██████╔╝███████║██║  ██║     ╚██████╗███████╗██║
+   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝      ╚═════╝╚══════╝╚═╝`}
+        </span>
+      </pre>
+      <p className="text-gray-300 mb-1 text-center">
+        Explore <span className="text-cyan-400">projects</span>, <span className="text-cyan-400">skills</span>, <span className="text-cyan-400">work</span>, and <span className="text-cyan-400">awards</span>.
+      </p>
+      <p className="text-gray-300 text-center">
+        Type <span className="text-cyan-400">help</span> to get started.
+      </p>
       <br />
     </div>
   );
@@ -363,7 +373,10 @@ export default function Terminal() {
   return (
     <>
       {isClient ? (
-        <div className="flex flex-col w-full min-w-0 max-w-full max-h-[400px] overflow-hidden">
+        <div 
+          className="flex flex-col w-full min-w-0 max-w-full max-h-[400px] overflow-hidden rounded-lg"
+          style={{ backgroundColor: theme.themeBGColor }}
+        >
           <div className="bg-[#2a2d38]/90 backdrop-blur-md border-b border-gray-700/50 h-10 w-full min-w-0 flex items-center px-4 z-50 rounded-t-lg -mb-[5px] flex-shrink-0">
             <div className="flex gap-2 w-16">
               <div
@@ -435,7 +448,7 @@ export default function Terminal() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 onKeyUp={stopInputKeyPropagation}
-                className="flex-1 min-w-0 ml-1 bg-transparent outline-none border-none"
+                className="flex-1 min-w-0 ml-1 bg-transparent outline-none border-none block-cursor"
                 style={{ color: theme.themeColor }}
                 autoFocus
               />

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.block-cursor {
+  caret-shape: block;
+  caret-color: white;
+}
+
 /* Smooth scrolling with reduced motion support */
 @media (prefers-reduced-motion: no-preference) {
   html {
