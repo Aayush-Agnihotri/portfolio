@@ -5,17 +5,17 @@ import { WorkData } from "./WorkData";
 import WorkTimelineCard from "./WorkTimelineCard";
 
 export default function WorkTimeline() {
-  const [expandedIndices, setExpandedIndices] = useState<Set<number>>(
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(
     new Set()
   );
 
-  const toggleExpanded = (index: number) => {
-    setExpandedIndices((prev) => {
+  const toggleExpanded = (company: string) => {
+    setExpandedItems((prev) => {
       const newSet = new Set(prev);
-      if (newSet.has(index)) {
-        newSet.delete(index);
+      if (newSet.has(company)) {
+        newSet.delete(company);
       } else {
-        newSet.add(index);
+        newSet.add(company);
       }
       return newSet;
     });
@@ -28,11 +28,11 @@ export default function WorkTimeline() {
 
         {WorkData.map((exp, index) => (
           <WorkTimelineCard
-            key={index}
+            key={exp.company}
             experience={exp}
             index={index}
-            isExpanded={expandedIndices.has(index)}
-            onToggle={() => toggleExpanded(index)}
+            isExpanded={expandedItems.has(exp.company)}
+            onToggle={() => toggleExpanded(exp.company)}
           />
         ))}
       </div>

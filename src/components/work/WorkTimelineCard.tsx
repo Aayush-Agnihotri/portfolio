@@ -76,9 +76,9 @@ export default function WorkTimelineCard({
             >
               <div className="px-5 pb-6 pt-2 border-t border-gray-50">
                 <ul className="space-y-3 mb-6">
-                  {experience.details.map((detail: string, i: number) => (
+                  {experience.details.map((detail: string) => (
                     <li
-                      key={i}
+                      key={detail}
                       className="flex items-center text-sm text-gray-600 leading-relaxed"
                     >
                       <span className="mr-3 text-blue-500">•</span>

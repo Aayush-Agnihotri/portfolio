@@ -194,11 +194,11 @@ export default function Terminal() {
     skills: (
       <div className="xl:max-w-xl">
         {TechnicalData.map((data, i) => (
-          <p key={i}>
+          <p key={data.type}>
             <span className="text-green-400">&gt;</span>{" "}
             <span className="text-orange-400 font-semibold">{data.type}:</span>{" "}
             {data.skills.map((skill, j) => (
-              <span key={j}>
+              <span key={skill.name}>
                 <span className="text-cyan-300">{skill.name}</span>
                 {j !== data.skills.length - 1 ? (
                   <span className="text-gray-500">, </span>
@@ -214,7 +214,7 @@ export default function Terminal() {
     projects: (
       <div className="xl:max-w-xl">
         {ProjectData.map((data, i) => (
-          <p key={i}>
+          <p key={data.name}>
             <span className="text-green-400">&gt;</span>{" "}
             <span className="text-orange-400 font-semibold">{data.name}:</span>{" "}
             <span className="text-gray-300">{data.description}</span>
@@ -281,7 +281,7 @@ export default function Terminal() {
     work: (
       <div className="xl:max-w-xl">
         {WorkData.map((data, i) => (
-          <p key={i}>
+          <p key={data.company}>
             <span className="text-green-400">&gt;</span>{" "}
             <span className="text-orange-400 font-semibold">
               {data.company}:
@@ -423,7 +423,7 @@ export default function Terminal() {
 
             {/* Command history */}
             {history.map((entry, index) => (
-              <div key={index} className="mb-2 min-w-0 max-w-full text-left">
+              <div key={`history-${index}`} className="mb-2 min-w-0 max-w-full text-left">
                 <div className="flex min-w-0 max-w-full items-center mb-1 text-left">
                   <span className="shrink-0" style={{ color: theme.themePromptColor }}>
                     me@terminal:~${" "}

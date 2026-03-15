@@ -57,8 +57,8 @@ export default function ProjectCard({
                 <h1 className="text-xl font-semibold mt-1">{project.name}</h1>
               </div>
               <div className="text-center xl:text-start">
-                {project.stack.map((tech, i) => (
-                  <Chip key={i} color="primary" className="m-1">
+                {project.stack.map((tech) => (
+                  <Chip key={tech} color="primary" className="m-1">
                     {tech}
                   </Chip>
                 ))}
@@ -71,55 +71,51 @@ export default function ProjectCard({
               {project.links.app && (
                 <a
                   href={project.links.app}
-                  className="mx-auto lg:mx-0 hover:opacity-60"
+                  aria-label={`${project.name} App Store Link`}
+                  className="mx-auto lg:mx-0 px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold transition-opacity hover:opacity-80"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <button className="px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold hover:opacity-90">
-                    App Store &nbsp;
-                    <FontAwesomeIcon icon={faAppStoreIos} size="1x" />
-                  </button>
+                  App Store &nbsp;
+                  <FontAwesomeIcon icon={faAppStoreIos} size="1x" />
                 </a>
               )}
               {project.links.deployment && (
                 <a
                   href={project.links.deployment}
-                  className="mx-auto lg:mx-0 hover:opacity-60"
+                  aria-label={`${project.name} Website`}
+                  className="mx-auto lg:mx-0 px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold transition-opacity hover:opacity-80"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <button className="px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold hover:opacity-90">
-                    Website &nbsp;
-                    <FontAwesomeIcon icon={faLaptop} size="1x" />
-                  </button>
+                  Website &nbsp;
+                  <FontAwesomeIcon icon={faLaptop} size="1x" />
                 </a>
               )}
               {project.links.other && (
                 <a
                   href={project.links.other.url}
-                  className="mx-auto lg:mx-0 hover:opacity-60"
+                  aria-label={`${project.name} ${project.links.other.name}`}
+                  className="mx-auto lg:mx-0 px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold transition-opacity hover:opacity-80"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <button className="px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold hover:opacity-90">
-                    {project.links.other.name} &nbsp;
-                    <FontAwesomeIcon
-                      icon={faArrowUpRightFromSquare}
-                      size="xs"
-                    />
-                  </button>
+                  {project.links.other.name} &nbsp;
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    size="xs"
+                  />
                 </a>
               )}
               <a
                 href={project.links.github}
-                className="mx-auto lg:mx-0 hover:opacity-60"
+                aria-label={`${project.name} GitHub Repository`}
+                className="mx-auto lg:mx-0 px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold transition-opacity hover:opacity-80"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <button className="px-10 py-2 bg-blue-500 text-gray-50 rounded-md text-lg flex flex-row items-center font-bold hover:opacity-90">
-                  Github &nbsp;
-                  <FontAwesomeIcon icon={faGithub} size="1x" />
-                </button>
+                Github &nbsp;
+                <FontAwesomeIcon icon={faGithub} size="1x" />
               </a>
             </div>
           </div>

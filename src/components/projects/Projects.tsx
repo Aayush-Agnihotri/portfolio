@@ -18,8 +18,8 @@ export default function Projects() {
         </motion.div>
       </div>
       <div className="container mx-auto w-4/5 flex flex-col gap-5 wrap">
-        {ProjectData.map((project, i) => (
-          <ProjectCard key={i} project={project} />
+        {ProjectData.map((project) => (
+          <ProjectCard key={project.name} project={project} />
         ))}
       </div>
     </div>
